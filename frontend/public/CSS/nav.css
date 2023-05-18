@@ -1,0 +1,47 @@
+#navbar_btn {
+  color: white;
+  margin-top: 40px;
+  margin-left: 32px;
+  cursor: pointer;
+
+}
+
+.nav {
+  background-color: #171923;
+  position: fixed;
+  
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  transition: 0.5s;
+  transition-property: left;
+}
+
+.content{
+    margin-top: 20px;
+}
+
+.nav:hover {
+  background-color: black;
+}
+
+.nav a {
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.nav a:hover {
+  background: rgba(0, 172, 193, 1);
+}
+
+.nav i {
+  padding-right: 10px;
+}
