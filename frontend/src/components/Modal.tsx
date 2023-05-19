@@ -1,18 +1,38 @@
-import React from 'react';
-import '../assets/CSS/modal.css';
+import React from 'react'
+import '../assets/CSS/modal.css'
 
 type ModalProps = {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  title: string;
-  formLabels: string[];
-};
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+  title: string
+  formLabels: string[]
+}
 
-const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen, title, formLabels }) => {
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  setIsOpen,
+  title,
+  formLabels,
+}) => {
   const handleClose = () => {
-    setIsOpen(false);
-  };
+    setIsOpen(false)
+  }
 
+  const checkPlaceholder = (item: string) => {
+    if (item === 'Date') {
+      return 'YYYY/MM/DD'
+    }
+    if (item === 'Sucess') {
+      return 'True'
+    }
+    if (item === 'Rocket' || item === 'Crew' ) {
+      return 'Ex: 3'
+    }
+    if (item === 'Crewman' ) {
+      return 'Ex: 1, 2, 3'
+    }
+    return item;
+  }
   return (
     <>
       {isOpen && (
@@ -22,19 +42,27 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen, title, formLabels }) =
               &times;
             </button>
             <h2>{title}</h2>
+            <h5>Let's add some {title}!</h5>
             <div className="form">
               {formLabels.map((item, index) => (
                 <div key={index} className="form-field">
                   <label htmlFor={item}>{item}</label>
-                  <input id={item} placeholder={item} type="text" />
+                  <input
+                    id={item}
+                    placeholder={checkPlaceholder(item)}
+                    type="text"
+                  />
                 </div>
               ))}
             </div>
+            <button className="btn" type="submit">
+              <h4>Add</h4>
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal
