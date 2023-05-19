@@ -21,7 +21,7 @@ function Crewman() {
   return (
     <>
       <Header pageTitle="Crew"/>
-      <AddButton />
+      <AddButton entityName={"Crew"} formLabels={["Name"]}/>
       <Table data={table1} />
       <Table data={table2} />
       <Outlet />

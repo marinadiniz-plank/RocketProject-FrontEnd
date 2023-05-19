@@ -20,7 +20,7 @@ function Launch() {
   return (
     <>
       <Header pageTitle="Launch"/>
-      <AddButton />
+      <AddButton entityName={"Launch"} formLabels={["Name", "banana", "abacaxi"]}/>
       <Table data={table1} />
       <Table data={table2} />
       <Outlet />
