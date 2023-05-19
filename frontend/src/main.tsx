@@ -15,7 +15,7 @@ import {createBrowserRouter, RouterProvider } from 'react-router-dom';
 //TODO: integrar backend
 //TODO: dashboard
 //TODO: arrumar o footer
-//TODO: adicionar modal de formulario e notificacoes
+//TODO: adicionar notificacoes
 //TODO: arrumar navbar
 
 const router = createBrowserRouter([

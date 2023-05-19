@@ -19,7 +19,7 @@ const AddButton: React.FC<ModalProps> = ({entityName, formLabels }) => {
           <i className="fas fa-light fa-plus"></i>
             add
       </button>
-      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels}/>}
+      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} action={"add"}/>}
     </>
   );
 }

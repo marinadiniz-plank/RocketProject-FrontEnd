@@ -20,7 +20,7 @@ function Crewman() {
   return (
     <>
       <Header pageTitle="Crewman"/>
-      <AddButton />
+      <AddButton entityName={"Crewman"} formLabels={["Name", "Patent"]}/>
       <Table data={table1} />
       <Table data={table2} />
       <Outlet />

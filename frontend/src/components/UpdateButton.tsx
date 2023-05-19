@@ -1,12 +1,25 @@
+import { useState } from 'react';
+import '../assets/CSS/buttons.css'
+import Modal from './Modal';
 
-import "../assets/CSS/buttons.css";
-function UpdateButton() {
+type ModalProps = {
+    entityName: string,
+    formLabels: string[]
+}
+
+const UpdateButton: React.FC<ModalProps> = ({entityName, formLabels }) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
+    <>
     <button 
-    className="edit_btn"
-    onClick={() => console.log('Botão editar!')}>
-       <i className="fa fa-pen"></i>
+        className="edit_btn"
+        onClick={() => { setIsOpen(true) }}>
+          <i className="fa fa-pen"></i>
     </button>
+      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} action={"update"}/>}
+    </>
   );
 }
 

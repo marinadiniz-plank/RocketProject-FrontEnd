@@ -14,7 +14,7 @@ function Rocket() {
   return (
     <>
     <Header pageTitle="Rocket"/>
-      <AddButton />
+    <AddButton entityName={"Rocket"} formLabels={["Name"]}/>
       {/* <Table data={rocket} /> */}
       <Outlet />
     </>

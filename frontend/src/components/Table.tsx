@@ -6,9 +6,13 @@ import DeleteButton from "./DeleteButton";
 
 type TableProps = {
   data: Record<number, any>[];
-}
+};
 
 const GenericTable: React.FC<TableProps> = ({ data }) => {
+  function getValue(value?: any) {
+    return value || "";
+  }
+
   return (
     <div className="data-div">
       <div className="divTable">
@@ -26,10 +30,14 @@ const GenericTable: React.FC<TableProps> = ({ data }) => {
             {data.map((item, index) => (
               <tr key={index}>
                 {Object.values(item).map((value, colIndex) => (
-                  <td key={colIndex}>{value}</td>
+                  <td key={colIndex}>{getValue(value)}</td>
                 ))}
-                <th className="edit_btn"><UpdateButton /></th>
-                <th className="del_btn"><DeleteButton /></th>
+                <td className="edit_btn">
+                  <UpdateButton entityName={"Launch"} formLabels={Object.keys(item).slice(1).map(getValue)} />
+                </td>
+                <td className="del_btn">
+                  <DeleteButton />
+                </td>
               </tr>
             ))}
           </tbody>
