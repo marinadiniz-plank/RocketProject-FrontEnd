@@ -1,4 +1,4 @@
-import '../../public/CSS/notifications.css'
+import '../assets/CSS/notifications.css'
 
 const Notification = () => {
     return (

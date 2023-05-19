@@ -1,5 +1,5 @@
 
-import "../../public/CSS/buttons.css";
+import "../assets/CSS/buttons.css";
 function UpdateButton() {
   return (
     <button 

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../public/CSS/table.css";
+import "../assets/CSS/table.css";
 
 import UpdateButton from "./UpdateButton";
 import DeleteButton from "./DeleteButton";

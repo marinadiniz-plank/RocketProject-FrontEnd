@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "../../public/CSS/main.css";
-import "../../public/CSS/nav.css";
+import "../assets/CSS/main.css";
+import "../assets/CSS/nav.css"
 import Navbar from "./Navbar";
 
 type HeaderProps = {

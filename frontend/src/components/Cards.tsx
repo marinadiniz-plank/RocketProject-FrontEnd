@@ -1,4 +1,4 @@
-import "../../public/CSS/cards.css";
+import "../assets/CSS/cards.css";
 
 type MyComponentProps = {
     entity: string;

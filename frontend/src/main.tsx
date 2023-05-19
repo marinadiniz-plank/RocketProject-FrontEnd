@@ -13,8 +13,9 @@ import {createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
 //TODO: integrar backend
-
 //TODO: dashboard
+//TODO: arrumar o footer
+
 const router = createBrowserRouter([
   {
   path: "/",
