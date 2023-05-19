@@ -1,40 +1,32 @@
-import { useEffect, useState } from 'react'
-import AddButton from '../components/AddButton'
-import Header from '../components/Header'
-// import Table from "../components/Table";
+import AddButton from "../components/AddButton";
+import Header from "../components/Header";
+import Table from "../components/Table";
 
-import { Outlet } from 'react-router-dom'
-// import Table from '../components/Table'
+import { Outlet } from "react-router-dom";
 
-
-function RenderRocket() {
-  const [rocketData, setRocketData] = useState([])
-
-  useEffect(() => {
-    renderRocketList()
-  }, [])
-
-  const renderRocketList = () => {
-    fetch('http://localhost:80/rocket')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-      })
-      .catch(error => {
-        console.log('Ocorreu um erro:', error)
-      })
-  }
-}
 function Rocket() {
-  RenderRocket();
+  const table1 = [
+    { id: 1, name: "John", age: 25 },
+    { id: 2, name: "Jane", age: 30 },
+    { id: 3, name: "Bob", age: 35 },
+  ];
+
+  const table2 = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Jane" },
+    { id: 3, name: "Bob" },
+  ];
+
   return (
     <>
-      <Header pageTitle="Rocket" />
-      {/* <Table data={rocketData} /> */}
+    <Header pageTitle="Rocket"/>
       <AddButton />
+      <Table data={table1} />
+      <Table data={table2} />
       <Outlet />
     </>
-  )
+  );
 }
 
-export default Rocket
+
+export default Rocket;
