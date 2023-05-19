@@ -13,7 +13,7 @@ import {createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 //TODO: concertar pagina de erro
 //TODO: integrar backend
-//TODO: colocar o prettier
+
 //TODO: dashboard
 const router = createBrowserRouter([
   {
