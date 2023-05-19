@@ -1,6 +1,9 @@
 import React from "react";
 import "../../public/CSS/table.css";
 
+import UpdateButton from "./UpdateButton";
+import DeleteButton from "./DeleteButton";
+
 type TableProps = {
   data: Record<number, any>[];
 }
@@ -15,8 +18,8 @@ const GenericTable: React.FC<TableProps> = ({ data }) => {
               {Object.keys(data[0]).map((column) => (
                 <th key={column}>{column}</th>
               ))}
-              <th className="edit_btn">Editar</th>
-              <th className="delete_btn">Excluir</th>
+              <th className="edit">Editar</th>
+              <th className="delete">Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -25,8 +28,8 @@ const GenericTable: React.FC<TableProps> = ({ data }) => {
                 {Object.values(item).map((value, colIndex) => (
                   <td key={colIndex}>{value}</td>
                 ))}
-                <th className="edit_btn"><i className="fa fa-pen"></i></th>
-                <th className="delete_btn"><i className="fa fa-delete-left"></i></th>
+                <th className="edit_btn"><UpdateButton /></th>
+                <th className="del_btn"><DeleteButton /></th>
               </tr>
             ))}
           </tbody>

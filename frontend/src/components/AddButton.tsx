@@ -1,4 +1,4 @@
-import '../../public/CSS/addbutton.css'
+import '../../public/CSS/buttons.css'
 
 function AddButton() {
   return (

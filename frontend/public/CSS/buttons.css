@@ -15,3 +15,16 @@
     margin-right: 50px;
     margin-top: 20px;
   }
+
+  .edit_btn,
+  .del_btn{
+    color: white;
+    background: transparent;
+    text-decoration: none;
+
+    justify-content: center;
+    text-align: center;
+
+    margin-left: 40px;
+    margin-right: 50px;
+  }

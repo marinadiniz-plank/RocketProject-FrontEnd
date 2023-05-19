@@ -30,7 +30,6 @@ const ErrorPage = () => {
           sx={{
             fontSize: '5rem',
             textAlign: 'right',
-            animation: 'bounce 2s infinite',
             marginLeft: 90, 
             marginTop: 40,
             fontFamily: 'Source Code Pro, monospace', fontWeight: 'bold'

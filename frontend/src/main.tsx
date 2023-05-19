@@ -11,7 +11,7 @@ import ErrorPage from './routes/ErrorPage.tsx';
 
 import {createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-//TODO: concertar pagina de erro
+
 //TODO: integrar backend
 
 //TODO: dashboard
