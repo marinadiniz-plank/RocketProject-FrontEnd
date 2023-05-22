@@ -4,7 +4,8 @@ import Modal from './Modal';
 
 type ModalProps = {
     entityName: string,
-    formLabels: string[]
+    formLabels: string[],
+    formPlaceholder: string[]
 }
 
 
@@ -14,12 +15,13 @@ const AddButton: React.FC<ModalProps> = ({entityName, formLabels }) => {
   return (
     <>
       <button 
+          type="submit"
           className="add_btn"
           onClick={() => { setIsOpen(true) }}>
           <i className="fas fa-light fa-plus"></i>
             add
       </button>
-      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} action={"add"}/>}
+      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} formPlaceholder={formLabels} action={"add"}/>}
     </>
   );
 }

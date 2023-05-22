@@ -1,25 +1,26 @@
+.top_section {
+  display: flex;
+  align-items: center;
+}
+
 #navbar_btn {
   color: white;
   margin-top: 40px;
   margin-left: 32px;
   cursor: pointer;
-
 }
-
-.nav {
-  background-color: #171923;
+.sidebar {
   position: fixed;
-  
   height: 100%;
   top: 0px;
   left: 0px;
-  width: 300px;
   transition: 0.5s;
   transition-property: left;
+  transition: all 0.5s;
 }
 
-.content{
-    margin-top: 20px;
+.content {
+  margin-top: 40px;
 }
 
 .nav:hover {
@@ -27,21 +28,25 @@
 }
 
 .nav a {
-    color: #fff;
-    display: block;
-    width: 100%;
-    line-height: 60px;
-    text-decoration: none;
-    padding-left: 20px;
-    box-sizing: border-box;
-    transition: 0.5s;
-    transition-property: background;
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  justify-content: start;
+  color: #fff;
+
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  transition: 0.5s;
+  transition-property: background;
+
 }
 
+.nav a i {
+  width: 50px;
+  margin-left: 30px;
+  align-self: center;
+}
 .nav a:hover {
   background: rgba(170, 54, 124, 0.5);
-}
-
-.nav i {
-  padding-right: 10px;
 }

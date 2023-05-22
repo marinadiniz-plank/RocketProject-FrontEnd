@@ -10,14 +10,15 @@ export const RenderRocket: React.FC = () => {
   const initialData: Data[] = JSON.parse(localStorage.getItem('myData') || '[]');
 
   const [data, setData] = useState<Data[]>(initialData);
-
+// localStorage.clear()
   useEffect(() => {
     const fetchData = async () => {
       try {
         const storedData = localStorage.getItem('myData');
+        
+        console.log('Dados armazenados:', storedData);
         if (storedData) {
           setData(JSON.parse(storedData));
-          // console.log('Dados armazenados:', storedData);
         } else {
           const response = await fetch('http://localhost:80/rocket');
           if (!response.ok) {

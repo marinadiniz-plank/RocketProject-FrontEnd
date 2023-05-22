@@ -22,10 +22,8 @@ const Modal: React.FC<ModalProps> = ({
     setIsOpen(false)
   }
 
-  const checkPlaceholder = (item: string, action: string) => {
-    console.log(item);
+  const checkPlaceholder = (item: string,  action: string) => {
     
-    //TODO: implementar placeholder de update (chamar mais um paramentro)
     if (action === 'add') {
         if (item === 'Date') {
           return 'YYYY/MM/DD'
@@ -40,8 +38,11 @@ const Modal: React.FC<ModalProps> = ({
           return 'Ex: 1, 2, 3'
         }
     }
+    if (action === 'update') {
+      return formPlaceholder.join(', ');
+    }
     else
-      return formPlaceholder
+      return item
   }
   return (
     <>

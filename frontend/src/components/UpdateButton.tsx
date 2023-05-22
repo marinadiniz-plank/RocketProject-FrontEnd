@@ -16,6 +16,7 @@ const UpdateButton: React.FC<ModalProps> = ({entityName, formLabels, formPlaceho
   return (
     <>
     <button 
+        type="submit"
         className="edit_btn"
         onClick={() => { setIsOpen(true) }}>
           <i className="fa fa-pen"></i>

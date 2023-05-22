@@ -7,7 +7,7 @@ function Rocket() {
   return (
     <>
     <Header pageTitle="Rocket"/>
-    <AddButton entityName={"Rocket"} formLabels={["Name"]}/>
+    <AddButton entityName={"Rocket"} formLabels={["Name"]} formPlaceholder={[""]}/>
     <RenderRocket />
       <Outlet />
       </>

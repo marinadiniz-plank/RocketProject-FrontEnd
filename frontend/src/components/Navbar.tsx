@@ -1,44 +1,47 @@
-import "../assets/CSS/nav.css";
-import React from "react";
-import { Link } from 'react-router-dom';
+import '../assets/CSS/nav.css'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-type NavbarProps = {
-  active: (value: boolean) => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ active }) => {
-  
-  const closeNavbar = () => {
-    active(false);
-  };
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(true)
+  const toggle = () => setIsOpen(!isOpen)
 
   return (
     <div className="nav">
+      <div style={{ width: isOpen ? '200px' : '75px' }} className="sidebar">
+        <div className="top_section">
+      
+            <i className="fas fa-bars" id="navbar_btn" onClick={toggle} />
+
+        </div>
+        <div className="content"  >
+          <Link to="/">
+            <i className="fas fa-home"></i>
+            <span style={{ visibility: isOpen ? 'visible' : 'hidden' }}>Home</span>
+          </Link>
+          <Link to="/Rocket">
+            <i className="fas fa-light fa-rocket"></i>
+            <span style={{ visibility: isOpen ? 'visible' : 'hidden' }}>Rocket</span>
+          </Link>
+          <Link to="/Crewman">
+            <i className="fas fa-light fa-user"></i>
+            <span style={{ visibility: isOpen ? 'visible' : 'hidden' }}>Crewman</span>
+          </Link>
+          <Link to="/Crew">
+            <i className="fas fa-light fa-users"></i>
+            <span style={{ visibility: isOpen ? 'visible' : 'hidden' }}>Crew</span>
+          </Link>
+          <Link to="/Launch">
+            <i className="fas fa-light fa-play"></i>
+            <span style={{ visibility: isOpen ? 'visible' : 'hidden' }}>Launch</span>
+          </Link>
+        </div>
+      </div>
+      {/* 
       <i className="fas fa-bars" id="navbar_btn" onClick={closeNavbar}></i>
-      <div className="content">
-        <Link to="/">
-          <i className="fas fa-home"></i>
-          <span>Home</span>
-        </Link>
-        <Link to="/Rocket">
-          <i className="fas fa-light fa-rocket"></i>
-          <span>Rocket</span>
-        </Link>
-        <Link to="/Crewman">
-          <i className="fas fa-light fa-user"></i>
-          <span>Crewman</span>
-        </Link>
-        <Link to="/Crew">
-          <i className="fas fa-light fa-users"></i>
-          <span>Crew</span>
-          </Link>
-        <Link to="/Launch">
-          <i className="fas fa-light fa-play"></i>
-          <span>Launch</span>
-          </Link>
-      </div>
-      </div>
-  );
-};
-// style={{marginLeft: isOpen ? "50px" : "0px"}} 
-export default Navbar;
+      */}
+    </div>
+  )
+}
+// style={{marginLeft: isOpen ? "50px" : "0px"}}
+export default Navbar
