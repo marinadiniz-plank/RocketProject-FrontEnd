@@ -1,17 +1,44 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import Table from '../components/Table';
 
+type Data = {
+  id: number;
+  name: string;
+};
 
-export function RenderRocket() {
-  const [rocketData, setRocketData] = useState([])
+export const RenderRocket: React.FC = () => {
+  const initialData: Data[] = JSON.parse(localStorage.getItem('myData') || '[]');
+
+  const [data, setData] = useState<Data[]>(initialData);
 
   useEffect(() => {
-    fetch('http://localhost:80/rocket')
-      .then(response => response.json())
-      .then(data => { setRocketData(data)})
-      .catch(error => {
-        console.log('Ocorreu um erro:', error)
-      })
-  }, [])
-   
-  return rocketData;
-}
+    const fetchData = async () => {
+      try {
+        const storedData = localStorage.getItem('myData');
+        if (storedData) {
+          setData(JSON.parse(storedData));
+          // console.log('Dados armazenados:', storedData);
+        } else {
+          const response = await fetch('http://localhost:80/rocket');
+          if (!response.ok) {
+            throw new Error('Erro na solicitação');
+          }
+          const jsonData = await response.json();
+          setData(jsonData);
+          localStorage.setItem('myData', JSON.stringify(jsonData));
+          console.log('Dados armazenados no JSON:', jsonData);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <Table entityName={"Rocket"} data={data} />
+    </div>
+  );
+};

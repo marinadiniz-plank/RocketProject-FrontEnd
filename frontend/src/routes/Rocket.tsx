@@ -1,23 +1,16 @@
 import AddButton from "../components/AddButton";
 import Header from "../components/Header";
-// import Table from "../components/Table";
-
 import { Outlet } from "react-router-dom";
 import { RenderRocket } from "../service/RocketService"
 
 function Rocket() {
-  
-  // const rocket = RenderRocket();
-  // console.log(rocket);
- 
-
   return (
     <>
     <Header pageTitle="Rocket"/>
     <AddButton entityName={"Rocket"} formLabels={["Name"]}/>
-      {/* <Table data={rocket} /> */}
+    <RenderRocket />
       <Outlet />
-    </>
+      </>
   );
 }
 

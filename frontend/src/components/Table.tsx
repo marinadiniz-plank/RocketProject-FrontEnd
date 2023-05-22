@@ -5,11 +5,12 @@ import UpdateButton from "./UpdateButton";
 import DeleteButton from "./DeleteButton";
 
 type TableProps = {
+  entityName: string,
   data: Record<number, any>[];
 };
 
-const GenericTable: React.FC<TableProps> = ({ data }) => {
-  function getValue(value?: any) {
+const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
+  function getValue(value?: any) {   
     return value || "";
   }
 
@@ -33,7 +34,7 @@ const GenericTable: React.FC<TableProps> = ({ data }) => {
                   <td key={colIndex}>{getValue(value)}</td>
                 ))}
                 <td className="edit_btn">
-                  <UpdateButton entityName={"Launch"} formLabels={Object.keys(item).slice(1).map(getValue)} />
+                  <UpdateButton entityName={entityName} formLabels={Object.keys(item).slice(0, -1).map(getValue)} formPlaceholder={Object.values(item).slice(0, -1).map(getValue)}/>
                 </td>
                 <td className="del_btn">
                   <DeleteButton />

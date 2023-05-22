@@ -5,7 +5,8 @@ type ModalProps = {
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
   title: string
-  formLabels: string[]
+  formLabels: string[],
+  formPlaceholder: string[],
   action: string
 }
 
@@ -14,14 +15,16 @@ const Modal: React.FC<ModalProps> = ({
   setIsOpen,
   title,
   formLabels,
-  action,
+  formPlaceholder,
+  action
 }) => {
   const handleClose = () => {
     setIsOpen(false)
   }
 
   const checkPlaceholder = (item: string, action: string) => {
-  
+    console.log(item);
+    
     //TODO: implementar placeholder de update (chamar mais um paramentro)
     if (action === 'add') {
         if (item === 'Date') {
@@ -37,7 +40,8 @@ const Modal: React.FC<ModalProps> = ({
           return 'Ex: 1, 2, 3'
         }
     }
-    return item
+    else
+      return formPlaceholder
   }
   return (
     <>
