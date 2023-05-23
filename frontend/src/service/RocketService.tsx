@@ -42,24 +42,60 @@ export const GetRocket = () => {
 }
 
 
-export const SubmitRocket = async () => {
-  const [data, setData] = useState<Data[]>([])
-
+export const SubmitRocket = async (formData: Data) => {
   try {
     const response = await fetch('http://localhost:80/rocket', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
-    })
+      body: JSON.stringify(formData),
+    });
 
     if (!response.ok) {
-      throw new Error('Error in request') // call notification
+      throw new Error('Error in request'); // call notification
     }
-    const jsonData = await response.json()
-    setData(prev => [...prev, jsonData])
+    const jsonData = await response.json();
+    return jsonData;
   } catch (error) {
-    console.error(error) // call notification
+    console.error(error); // call notification
   }
-}
+};
+
+export const UpdateRocket = async (formData: Partial<Data>) => {
+  try {
+    const response = await fetch(`http://localhost:80/rocket/${formData.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      throw new Error('Error in request'); // call notification
+    }
+    const jsonData = await response.json();
+    return jsonData;
+  } catch (error) {
+    console.error(error); // call notification
+  }
+};
+
+export const DeleteRocket = async (id: number) => {
+  try {
+
+    const response = await fetch(`http://localhost:80/rocket/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Error in request'); // call notification
+    }
+  } catch (error) {
+    console.error(error); // call notification
+  }
+};
