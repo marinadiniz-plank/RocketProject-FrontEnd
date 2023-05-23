@@ -1,15 +1,16 @@
 .add_btn {
-  display: flex;
-  border-radius: 20px;
-  border: 2px solid white;
+  border-radius: 10px;
+  border: 2px solid rgba(170, 54, 124, 0.5);
   color: white;
-  background: transparent;
+  background-color: rgba(170, 54, 124, 0.5);
   text-decoration: none;
 
-  padding-top: 4px;
-  padding-left: 10px;
-  padding-bottom: 4px;
-  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 90px;
+  height: 30px;
+  padding-top: 5px;
 
   margin-left: auto;
   margin-right: 50px;

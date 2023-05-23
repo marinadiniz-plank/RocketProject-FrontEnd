@@ -20,7 +20,7 @@
 }
 
 .content {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .nav:hover {
@@ -39,7 +39,6 @@
   text-decoration: none;
   transition: 0.5s;
   transition-property: background;
-
 }
 
 .nav a i {
