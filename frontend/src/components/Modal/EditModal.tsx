@@ -1,48 +1,28 @@
 import React from 'react'
-import '../assets/CSS/modal.css'
+import '../../assets/CSS/modal.css'
 
 type ModalProps = {
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
   title: string
   formLabels: string[],
-  formPlaceholder: string[],
-  action: string
+  formPlaceholder: string[]
 }
 
-const Modal: React.FC<ModalProps> = ({
+const EditModal: React.FC<ModalProps> = ({
   isOpen,
   setIsOpen,
   title,
   formLabels,
-  formPlaceholder,
-  action
+  formPlaceholder
 }) => {
   const handleClose = () => {
     setIsOpen(false)
   }
 
-  const checkPlaceholder = (item: string,  action: string) => {
-    
-    if (action === 'add') {
-        if (item === 'Date') {
-          return 'YYYY/MM/DD'
-        }
-        if (item === 'Sucess') {
-          return 'True'
-        }
-        if (item === 'Rocket' || item === 'Crew') {
-          return 'Ex: 3'
-        }
-        if (item === 'Crewman') {
-          return 'Ex: 1, 2, 3'
-        }
-    }
-    if (action === 'update') {
+  const checkPlaceholder = () => {
       return formPlaceholder.join(', ');
-    }
-    else
-      return item
+
   }
   return (
     <>
@@ -54,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({
             </button>
             <h2>{title}</h2>
             <h5>
-              Let's {action} some {title}!
+              Let's update some {title}!
             </h5>
             <div className="form">
               {formLabels.map((item, index) => (
@@ -62,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({
                   <label htmlFor={item}>{item}</label>
                   <input
                     id={item}
-                    placeholder={checkPlaceholder(item, action)}
+                    placeholder={checkPlaceholder()}
                     type="text"
                   />
                 </div>
@@ -78,4 +58,4 @@ const Modal: React.FC<ModalProps> = ({
   )
 }
 
-export default Modal
+export default EditModal

@@ -1,16 +1,20 @@
-import AddButton from "../components/AddButton";
-import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
-import { RenderRocket } from "../service/RocketService"
+import AddButton from "../components/Buttons/AddButton";
+import Header from "../components/Header";
+import { RenderRocket, SubmitRocket } from "../service/RocketService";
 
 function Rocket() {
   return (
     <>
-    <Header pageTitle="Rocket"/>
-    <AddButton entityName={"Rocket"} formLabels={["Name"]} formPlaceholder={[""]}/>
-    <RenderRocket />
+      <Header pageTitle="Rocket" />
+      <AddButton
+        entityName={"Rocket"}
+        formLabels={["Name"]}
+        onSubmit={SubmitRocket}
+      />
+      <RenderRocket />
       <Outlet />
-      </>
+    </>
   );
 }
 

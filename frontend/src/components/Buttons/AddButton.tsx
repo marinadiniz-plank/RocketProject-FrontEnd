@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import '../assets/CSS/buttons.css'
-import Modal from './Modal';
+import '../../assets/CSS/buttons.css'
+import AddModal from '../Modal/AddModal';
 
 type ModalProps = {
     entityName: string,
     formLabels: string[],
-    formPlaceholder: string[]
+    onSubmit: () => void
 }
 
 
-const AddButton: React.FC<ModalProps> = ({entityName, formLabels }) => {
+const AddButton: React.FC<ModalProps> = ({entityName, formLabels, onSubmit }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -21,7 +21,7 @@ const AddButton: React.FC<ModalProps> = ({entityName, formLabels }) => {
           <i className="fas fa-light fa-plus"></i>
             add
       </button>
-      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} formPlaceholder={formLabels} action={"add"}/>}
+      {isOpen && <AddModal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} onSubmit={onSubmit}/>}
     </>
   );
 }

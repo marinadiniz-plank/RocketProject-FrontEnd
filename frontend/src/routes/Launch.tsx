@@ -1,4 +1,4 @@
-import AddButton from "../components/AddButton";
+import AddButton from "../components/Buttons/AddButton";
 import Header from "../components/Header";
 import { RenderLaunch } from "../service/LaunchService"
 import { Outlet } from "react-router-dom";
@@ -10,7 +10,7 @@ function Launch() {
   return (
     <>
       <Header pageTitle="Launch"/>
-      <AddButton entityName={"Launch"} formLabels={["Launch code", "Date", "Success", "Rocket", "Crew"]} formPlaceholder={[""]}/>
+      <AddButton entityName={"Launch"} formLabels={["Launch code", "Date", "Success", "Rocket", "Crew"]}/>
       <RenderLaunch />
       <Outlet />
     </>

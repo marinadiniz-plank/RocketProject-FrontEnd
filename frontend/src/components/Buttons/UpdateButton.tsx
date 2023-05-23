@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import '../assets/CSS/buttons.css'
-import Modal from './Modal';
+import '../../assets/CSS/buttons.css'
+import EditModal from '../Modal/EditModal';
+
 
 type ModalProps = {
     entityName: string,
@@ -21,7 +22,7 @@ const UpdateButton: React.FC<ModalProps> = ({entityName, formLabels, formPlaceho
         onClick={() => { setIsOpen(true) }}>
           <i className="fa fa-pen"></i>
     </button>
-      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} formPlaceholder={formPlaceholder} action={"update"}/>}
+      {isOpen && <EditModal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} formPlaceholder={formPlaceholder}/>}
     </>
   );
 }
