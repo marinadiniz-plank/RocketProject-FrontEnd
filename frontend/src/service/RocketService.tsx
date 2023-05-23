@@ -42,8 +42,10 @@ export const GetRocket = () => {
 }
 
 
-export const SubmitRocket = async (formData: Data) => {
+export const SubmitRocket = async (formData: Record<number, any>) => {
   try {
+    console.log(formData);
+
     const response = await fetch('http://localhost:80/rocket', {
       method: 'POST',
       headers: {
@@ -56,10 +58,13 @@ export const SubmitRocket = async (formData: Data) => {
       throw new Error('Error in request'); // call notification
     }
     const jsonData = await response.json();
+    console.log(jsonData);
+
     return jsonData;
   } catch (error) {
     console.error(error); // call notification
   }
+
 };
 
 export const UpdateRocket = async (formData: Partial<Data>) => {
@@ -95,6 +100,7 @@ export const DeleteRocket = async (id: number) => {
     if (!response.ok) {
       throw new Error('Error in request'); // call notification
     }
+
   } catch (error) {
     console.error(error); // call notification
   }

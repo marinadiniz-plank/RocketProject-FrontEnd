@@ -14,6 +14,7 @@ const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
     return value || "";
   }
 
+
   return (
     <div className="data-div">
       <div className="divTable">

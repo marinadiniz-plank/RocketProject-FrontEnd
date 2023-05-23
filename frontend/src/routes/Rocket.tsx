@@ -9,7 +9,7 @@ function Rocket() {
       <Header pageTitle="Rocket" />
       <AddButton
         entityName={"Rocket"}
-        formLabels={["Name"]}
+        formLabels={["name"]}
         onSubmit={SubmitRocket}
       />
       <RenderRocket />

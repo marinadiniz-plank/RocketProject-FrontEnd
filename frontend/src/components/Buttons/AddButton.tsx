@@ -5,7 +5,7 @@ import AddModal from '../Modal/AddModal';
 type ModalProps = {
   entityName: string,
   formLabels: string[],
-  onSubmit: () => void
+  onSubmit: (formData: Record<number, any>) => void
 }
 
 
