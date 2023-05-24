@@ -11,10 +11,9 @@ import Rocket from './routes/Rocket.tsx';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-
-//TODO: integrar backend
 //TODO: dashboard
 //TODO: adicionar notificacoes
+//TODO: atualizar tabela quando realizar acoes
 
 const router = createBrowserRouter([
   {

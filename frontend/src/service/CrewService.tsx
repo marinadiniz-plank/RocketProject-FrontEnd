@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Table from '../components/Table';
+import CrewTable from '../components/Tables/CrewTable';
 
 type Data = {
   id: number;
@@ -17,7 +17,7 @@ export const RenderCrew: React.FC = () => {
   return (
     <div>
       {data && data.length > 0 ? (
-        <Table entityName="Crew" data={data} />
+        <CrewTable data={data} />
       ) : (
         <div>No data available</div>          // call notification
       )}
@@ -36,16 +36,16 @@ export const GetCrew = () => {
           throw new Error('Error in request');                   // call notification
         }
         const jsonData = await response.json();
-        const modifiedData = jsonData.map((item: Data) => {
-          const { id, name, crewman } = item;
-          const crewmanIds = crewman.map((crew) => crew.id).join(", ");
-          return {
-            id,
-            name,
-            crewman_id: crewmanIds
-          };
-        })
-        setData(modifiedData);
+        // const modifiedData = jsonData.map((item: Data) => {
+        //   const { id, name, crewman } = item;
+        //   const crewmanIds = crewman.map((crew) => crew.id).join(", ");
+        //   return {
+        //     id,
+        //     name,
+        //     crewman_id: crewmanIds
+        //   };
+        // })
+        setData(jsonData);
       } catch (error) {
         console.error(error);                                // call notification
       }

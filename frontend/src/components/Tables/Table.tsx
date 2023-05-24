@@ -1,7 +1,7 @@
 import React from "react";
-import "../assets/CSS/table.css";
-import DeleteButton from "./Buttons/DeleteButton";
-import UpdateButton from "./Buttons/UpdateButton";
+import "../../assets/CSS/table.css";
+import DeleteButton from "../Buttons/DeleteButton";
+import UpdateButton from "../Buttons/UpdateButton";
 
 type TableProps = {
   entityName: string;

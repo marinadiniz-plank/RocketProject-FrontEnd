@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Table from '../components/Table'
+import RocketTable from '../components/Tables/RocketTable'
 
 type Data = {
   id: number
@@ -12,7 +12,7 @@ export const RenderRocket: React.FC = () => {
   return (
     <div>
       {data && data.length > 0 ? (
-        <Table entityName="Rocket" data={data} />
+        <RocketTable data={data} />
       ) : (
         <div>No data available</div> // call notification
       )}

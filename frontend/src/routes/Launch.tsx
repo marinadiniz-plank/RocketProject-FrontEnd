@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom";
 import AddButton from "../components/Buttons/AddButton";
 import Header from "../components/Header";
-import { RenderLaunch } from "../service/LaunchService";
+import { RenderLaunch, SubmitLaunch } from "../service/LaunchService";
 
 function Launch() {
-
-
-  //TODO: adicionar useffect para table
   return (
     <>
       <Header pageTitle="Launch" />
-      <AddButton entityName={"Launch"} formLabels={["launchCode", "date", "success", "rocket", "crew"]} />
+      <AddButton
+        entityName={"Launch"}
+        formLabels={["launchCode", "date", "success", "rocket", "crew"]}
+        onSubmit={SubmitLaunch} />
       <RenderLaunch />
       <Outlet />
     </>

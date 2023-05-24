@@ -17,7 +17,7 @@ const AddModal: React.FC<ModalProps> = ({
   formLabels,
   onSubmit,
 }) => {
-  const [formData, setFormData] = useState<Record<number, any>>({});
+  const [formData, setFormData] = useState<Record<string, any>>({});
 
   const handleClose = () => {
     setIsOpen(false);
@@ -30,6 +30,12 @@ const AddModal: React.FC<ModalProps> = ({
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (title == "Crew") {
+
+      formData["crewman"] = JSON.parse(`[${formData["crewman"]}]`)
+
+
+    }
     onSubmit(formData);
     handleClose();
   };
