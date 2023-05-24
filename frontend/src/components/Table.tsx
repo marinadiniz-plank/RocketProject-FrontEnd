@@ -17,6 +17,10 @@ const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
     console.log(`Deleting row with id ${id}`);
   };
 
+  const handleUpdate = (id: number, item: any) => {
+    console.log(`Updating row with id ${id} with data ${item}`);
+  };
+
   return (
     <div className="data-div">
       <div className="divTable">
@@ -43,6 +47,8 @@ const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
                     formPlaceholder={Object.values(item)
                       .slice(0, -1)
                       .map(getValue)}
+                    id={item.id}
+                    onUpdate={() => handleUpdate(item.id, item)}
                   />
                 </td>
                 <td className="del_btn">

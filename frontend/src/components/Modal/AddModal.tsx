@@ -35,16 +35,16 @@ const AddModal: React.FC<ModalProps> = ({
   };
 
   const checkPlaceholder = (item: string) => {
-    if (item === 'Date') {
+    if (item === 'date') {
       return 'YYYY/MM/DD';
     }
-    if (item === 'Success') {
+    if (item === 'success') {
       return 'True';
     }
-    if (item === 'Rocket' || item === 'Crew') {
+    if (item === 'rocket' || item === 'crew') {
       return 'Ex: 3';
     }
-    if (item === 'Crewman id') {
+    if (item === 'crewman') {
       return 'Ex: 1, 2, 3';
     }
 

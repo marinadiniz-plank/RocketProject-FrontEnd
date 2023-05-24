@@ -7,7 +7,10 @@ function Crewman() {
   return (
     <>
       <Header pageTitle="Crew" />
-      <AddButton entityName={"Crew"} formLabels={["Name", "Crewman id"]} onSubmit={SubmitCrew} />
+      <AddButton
+        entityName={"Crew"}
+        formLabels={["name", "crewman"]}
+        onSubmit={SubmitCrew} />
       <RenderCrew />
       <Outlet />
     </>

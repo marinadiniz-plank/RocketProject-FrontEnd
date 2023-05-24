@@ -57,7 +57,7 @@ export const GetCrew = () => {
   return data;
 };
 
-export const SubmitCrew = async (formData: Record<number, any>) => {
+export const SubmitCrew = async (formData: Partial<Data>) => {
   try {
     console.log(formData);
 

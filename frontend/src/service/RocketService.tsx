@@ -42,7 +42,7 @@ export const GetRocket = () => {
 }
 
 
-export const SubmitRocket = async (formData: Record<number, any>) => {
+export const SubmitRocket = async (formData: Partial<Data>) => {
   try {
     console.log(formData);
 
@@ -67,10 +67,10 @@ export const SubmitRocket = async (formData: Record<number, any>) => {
 
 };
 
-export const UpdateRocket = async (formData: Partial<Data>) => {
+export const UpdateRocket = async (id: number, formData: Partial<Data>) => {
   try {
-    console.log(formData.id);
-    const response = await fetch(`http://localhost:80/rocket/${formData.id}`, {
+    console.log(id);
+    const response = await fetch(`http://localhost:80/rocket/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
