@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../assets/CSS/modal.css';
 
+
 type ModalProps = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,6 +31,7 @@ const AddModal: React.FC<ModalProps> = ({
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSubmit(formData);
+    handleClose();
   };
 
   const checkPlaceholder = (item: string) => {

@@ -20,7 +20,12 @@ const AddButton: React.FC<ModalProps> = ({ entityName, formLabels, onSubmit }) =
         onClick={() => { setIsOpen(true) }}>
         Add
       </button>
-      {isOpen && <AddModal isOpen={isOpen} setIsOpen={setIsOpen} title={entityName} formLabels={formLabels} onSubmit={onSubmit} />}
+      {isOpen && <AddModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        title={entityName}
+        formLabels={formLabels}
+        onSubmit={onSubmit} />}
     </>
   );
 }

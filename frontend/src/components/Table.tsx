@@ -3,10 +3,9 @@ import "../assets/CSS/table.css";
 import DeleteButton from "./Buttons/DeleteButton";
 import UpdateButton from "./Buttons/UpdateButton";
 
-
 type TableProps = {
-  entityName: string,
-  data: Record<number, any>[];
+  entityName: string;
+  data: { id: number;[key: string]: any }[];
 };
 
 const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
@@ -14,6 +13,9 @@ const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
     return value || "";
   }
 
+  const handleDelete = (id: number) => {
+    console.log(`Deleting row with id ${id}`);
+  };
 
   return (
     <div className="data-div">
@@ -38,11 +40,14 @@ const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
                   <UpdateButton
                     entityName={entityName}
                     formLabels={Object.keys(item).slice(0, -1).map(getValue)}
-                    formPlaceholder={Object.values(item).slice(0, -1).map(getValue)}
+                    formPlaceholder={Object.values(item)
+                      .slice(0, -1)
+                      .map(getValue)}
+
                   />
                 </td>
                 <td className="del_btn">
-                  <DeleteButton />
+                  <DeleteButton id={item.id} onDelete={() => handleDelete(item.id)} />
                 </td>
               </tr>
             ))}

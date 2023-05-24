@@ -69,6 +69,7 @@ export const SubmitRocket = async (formData: Record<number, any>) => {
 
 export const UpdateRocket = async (formData: Partial<Data>) => {
   try {
+    console.log(formData.id);
     const response = await fetch(`http://localhost:80/rocket/${formData.id}`, {
       method: 'PUT',
       headers: {

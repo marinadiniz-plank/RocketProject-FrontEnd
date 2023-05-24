@@ -6,7 +6,7 @@ type ModalProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
   title: string
   formLabels: string[],
-  formPlaceholder: string[]
+  formPlaceholder: string[],
 }
 
 const EditModal: React.FC<ModalProps> = ({
@@ -20,10 +20,10 @@ const EditModal: React.FC<ModalProps> = ({
     setIsOpen(false)
   }
 
-  const checkPlaceholder = () => {
-      return formPlaceholder.join(', ');
+  const checkPlaceholder = (index: number) => {
+    return formPlaceholder[index] || '';
+  };
 
-  }
   return (
     <>
       {isOpen && (
@@ -42,7 +42,7 @@ const EditModal: React.FC<ModalProps> = ({
                   <label htmlFor={item}>{item}</label>
                   <input
                     id={item}
-                    placeholder={checkPlaceholder()}
+                    placeholder={checkPlaceholder(index)}
                     type="text"
                   />
                 </div>
