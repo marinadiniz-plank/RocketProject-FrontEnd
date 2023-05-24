@@ -43,11 +43,10 @@ const GenericTable: React.FC<TableProps> = ({ entityName, data }) => {
                     formPlaceholder={Object.values(item)
                       .slice(0, -1)
                       .map(getValue)}
-
                   />
                 </td>
                 <td className="del_btn">
-                  <DeleteButton id={item.id} onDelete={() => handleDelete(item.id)} />
+                  <DeleteButton entityName={entityName} id={item.id} onDelete={() => handleDelete(item.id)} />
                 </td>
               </tr>
             ))}

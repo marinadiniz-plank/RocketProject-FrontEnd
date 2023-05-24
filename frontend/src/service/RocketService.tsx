@@ -90,6 +90,7 @@ export const UpdateRocket = async (formData: Partial<Data>) => {
 
 export const DeleteRocket = async (id: number) => {
   try {
+    console.log(id);
 
     const response = await fetch(`http://localhost:80/rocket/${id}`, {
       method: 'DELETE',

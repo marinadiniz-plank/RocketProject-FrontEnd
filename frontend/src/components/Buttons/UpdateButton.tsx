@@ -7,20 +7,11 @@ type ModalProps = {
   entityName: string,
   formLabels: string[],
   formPlaceholder: string[],
-  // initialData: Record<number, any>;
-  // onUpdate: () => void;
 }
 
-const UpdateButton: React.FC<ModalProps> = ({ entityName, formLabels, formPlaceholder, initialData, onUpdate }) => {
-  // const handleUpdate = () => {
-  //   onUpdate();
-  //   console.log(initialData);
-
-  //   // UpdateRocket();
-  // };
-
-
+const UpdateButton: React.FC<ModalProps> = ({ entityName, formLabels, formPlaceholder }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <button
@@ -35,8 +26,7 @@ const UpdateButton: React.FC<ModalProps> = ({ entityName, formLabels, formPlaceh
         title={entityName}
         formLabels={formLabels}
         formPlaceholder={formPlaceholder}
-      // initialData={initialData}
-      // onUpdate={handleUpdate}
+
       />}
     </>
   );

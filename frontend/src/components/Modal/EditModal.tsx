@@ -14,7 +14,7 @@ const EditModal: React.FC<ModalProps> = ({
   setIsOpen,
   title,
   formLabels,
-  formPlaceholder
+  formPlaceholder,
 }) => {
   const handleClose = () => {
     setIsOpen(false)
@@ -23,6 +23,7 @@ const EditModal: React.FC<ModalProps> = ({
   const checkPlaceholder = (index: number) => {
     return formPlaceholder[index] || '';
   };
+
 
   return (
     <>
@@ -33,10 +34,8 @@ const EditModal: React.FC<ModalProps> = ({
               &times;
             </button>
             <h2>{title}</h2>
-            <h5>
-              Let's update some {title}!
-            </h5>
-            <div className="form">
+            <h5>Let's update some {title}!</h5>
+            <form className="form" >
               {formLabels.map((item, index) => (
                 <div key={index} className="form-field">
                   <label htmlFor={item}>{item}</label>
@@ -44,18 +43,19 @@ const EditModal: React.FC<ModalProps> = ({
                     id={item}
                     placeholder={checkPlaceholder(index)}
                     type="text"
+
                   />
                 </div>
               ))}
-            </div>
-            <button className="btn" type="submit">
-              <h4>Add</h4>
-            </button>
+              <button className="btn" type="submit">
+                <h4>Update</h4>
+              </button>
+            </form>
           </div>
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 export default EditModal
