@@ -1,33 +1,26 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import '../../assets/CSS/buttons.css';
-import AddModal from '../Modal/AddModal';
+import { Modal } from '../Modal/Modal';
 
-type ModalProps = {
-  entityName: string,
-  formLabels: string[],
-  onSubmit: (formData: Record<number, any>) => void
-}
+type AddButtonProps<T> = {
+  title: string;
+  form: FC<T>; // Generic form component type
+  formProps: T; // Props specific to the form component
+};
 
-
-const AddButton: React.FC<ModalProps> = ({ entityName, formLabels, onSubmit }) => {
-
+const AddButton = <T extends object>({ title, form: FormComponent, formProps }: AddButtonProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-      <button
-        type="submit"
-        className="add_btn"
-        onClick={() => { setIsOpen(true) }}>
+      <button type="submit" className="add_btn" onClick={() => setIsOpen(true)}>
         Add
       </button>
-      {isOpen && <AddModal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        title={entityName}
-        formLabels={formLabels}
-        onSubmit={onSubmit} />}
+      {isOpen && (
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={title} form={FormComponent} formProps={formProps} />
+      )}
     </>
   );
-}
+};
 
 export default AddButton;

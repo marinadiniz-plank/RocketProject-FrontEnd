@@ -1,7 +1,8 @@
 import React from "react";
-import "../../assets/CSS/table.css";
-import DeleteButton from "../Buttons/DeleteButton";
-import UpdateButton from "../Buttons/UpdateButton";
+import "../../../assets/CSS/table.css";
+import DeleteButton from "../../../components/Buttons/DeleteButton";
+import UpdateButton from "../../../components/Buttons/UpdateButton";
+
 
 type Data = {
     id: number;

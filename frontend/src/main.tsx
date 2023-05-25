@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 
-import Crew from './routes/Crew.tsx';
-import Crewman from './routes/Crewman.tsx';
-import ErrorPage from './routes/ErrorPage.tsx';
-import Home from './routes/Home.tsx';
-import Launch from './routes/Launch.tsx';
-import Rocket from './routes/Rocket.tsx';
+
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { default as Crew, default as Crewman } from './pages/Crew.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
+import Home from './pages/Home.tsx';
+import Launch from './pages/Launch.tsx';
+import Rocket from './pages/Rocket/Rocket.tsx';
 
 //TODO: dashboard
 //TODO: adicionar notificacoes
