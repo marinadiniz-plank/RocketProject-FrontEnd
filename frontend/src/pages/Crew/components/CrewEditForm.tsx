@@ -28,6 +28,11 @@ export const CrewEditForm: React.FC<FormProps> = ({
     event.preventDefault();
     formData["crewman"] = JSON.parse(`[${crewman}]`)
     onSubmit(formData.id, formData);
+
+    const modal = document.querySelector('.modal') as HTMLElement;
+    if (modal) {
+      modal.style.display = 'none'; // Hide the modal by setting its display to 'none'
+    }
   };
 
   return (
