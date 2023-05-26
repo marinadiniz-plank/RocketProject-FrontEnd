@@ -13,8 +13,8 @@ export const useRocket = (): [Data[], useRocketMethods] => {
     const [data, setData] = useState<Data[]>([]);
 
     const getRockets = async () => setData(await GetRocket());
-    const addRocket = async (rocket: Data) => { setData(await SubmitRocket(rocket)); getRockets(); }
-    const updateRocket = async (id: number, rocket: Partial<Data>) => { setData(await UpdateRocket(id, rocket)); getRockets() }
+    const addRocket = async (rocket: Data) => { await SubmitRocket(rocket); getRockets(); }
+    const updateRocket = async (id: number, rocket: Partial<Data>) => { await UpdateRocket(id, rocket); getRockets() }
     const deleteRocket = async (id: number) => { await DeleteRocket(id); getRockets() }
 
     return [

@@ -6,7 +6,7 @@ export type FormProps = {
   onSubmit: (formData: Data) => void;
 };
 
-export const RocketForm: React.FC<FormProps> = ({
+export const RocketAddForm: React.FC<FormProps> = ({
   onSubmit,
 }) => {
   const [formData, setFormData] = useState<Data>({ id: 0, name: '' });

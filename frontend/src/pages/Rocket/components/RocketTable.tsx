@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../assets/CSS/table.css";
-import DeleteButton from "../../../components/Buttons/DeleteButton";
 import UpdateButton from "../../../components/Buttons/UpdateButton";
+import { RocketEditForm } from "./RocketEditForm";
 
 
 type Data = {
@@ -9,18 +9,21 @@ type Data = {
     name: string;
 };
 
-const RocketTable: React.FC<{ data: Data[] }> = ({ data }) => {
-    function getValue(value?: string | number) {
-        return value !== undefined ? String(value) : "";
+type RocketTableModal = {
+    data: Data[];
+    updateRocket: (id: number, rocket: Partial<Data>) => Promise<void>;
+    deleteRocket: (id: number) => Promise<void>;
+}
+
+const RocketTable: React.FC<RocketTableModal> = ({ data, updateRocket, deleteRocket }) => {
+
+    const handleUpdateRocket = (id: number, formData: Data) => {
+        updateRocket(id, formData)
     }
 
-    const handleDelete = (id: number) => {
-        console.log(`Deleting row with id ${id}`);
-    };
-
-    const handleUpdate = (id: number, item: Data) => {
-        console.log(`Updating row with id ${id} with data`, item);
-    };
+    const handleDeleteRocket = (id: number) => {
+        deleteRocket(id)
+    }
 
     return (
         <div className="data-div">
@@ -40,22 +43,16 @@ const RocketTable: React.FC<{ data: Data[] }> = ({ data }) => {
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td className="edit_btn">
-                                    <UpdateButton
-                                        entityName={"Rocket"}
-                                        formLabels={Object.keys(item).slice(0, -1).map(getValue)}
-                                        formPlaceholder={Object.values(item)
-                                            .slice(0, -1)
-                                            .map(getValue)}
-                                        id={item.id}
-                                        onUpdate={() => handleUpdate(item.id, item)}
-                                    />
+                                    <UpdateButton title={"Rocket"} >
+                                        <RocketEditForm formLabels={Object.keys(item)} initialData={item} onSubmit={handleUpdateRocket} />
+                                    </UpdateButton>
+
                                 </td>
                                 <td className="del_btn">
-                                    <DeleteButton
-                                        entityName={"Rocket"}
-                                        id={item.id}
-                                        onDelete={() => handleDelete(item.id)}
-                                    />
+                                    {/* {React.Children.toArray(children)[1]} */}
+                                    <button className="del_btn" onClick={() => handleDeleteRocket(item.id)}>
+                                        <i className="fa fa-delete-left"></i>
+                                    </button>
                                 </td>
                             </tr>
                         ))}

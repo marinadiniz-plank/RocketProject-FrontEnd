@@ -3,12 +3,12 @@ import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
 import Header from "../../components/Header";
 import { useRocket } from "../../hooks/useRockets";
+import { RocketAddForm } from "./components/RocketAddForm";
 import { Data } from "./components/RocketData";
-import { RocketForm } from "./components/RocketForm";
 import RocketTable from "./components/RocketTable";
 
 function Rocket() {
-  const [data, { getRockets, addRocket }] = useRocket();
+  const [data, { getRockets, addRocket, updateRocket, deleteRocket }] = useRocket();
   useEffect(() => {
     getRockets();
   }, []);
@@ -20,14 +20,12 @@ function Rocket() {
   return (
     <>
       <Header pageTitle="Rocket" />
-      <AddButton
-        title={"Rocket"}
-        form={RocketForm}
-        formProps={{ onSubmit: handleAddRocket }} // Pass form data as an object
-      />
+      <AddButton title={"Rocket"}>
+        <RocketAddForm onSubmit={handleAddRocket} />
+      </AddButton>
       <div>
         {data && data.length > 0 ? (
-          <RocketTable data={data} />
+          <RocketTable data={data} updateRocket={updateRocket} deleteRocket={deleteRocket} />
         ) : (
           <div>No data available</div> // call notification
         )}

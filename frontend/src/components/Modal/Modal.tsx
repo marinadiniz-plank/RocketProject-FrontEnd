@@ -1,15 +1,14 @@
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import '../../assets/CSS/modal.css';
 
-type ModalProps<T> = {
+type ModalProps = {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     title: string;
-    form: FC<T>; // Generic form component type
-    formProps: T;
+    children: ReactNode;
 };
 
-export const Modal = <T extends object>({ isOpen, setIsOpen, title, form: FormComponent, formProps }: ModalProps<T>) => {
+export const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen, title, children }) => {
     const handleClose = () => {
         setIsOpen(false);
     };
@@ -23,7 +22,7 @@ export const Modal = <T extends object>({ isOpen, setIsOpen, title, form: FormCo
                             &times;
                         </button>
                         <h2>{title}</h2>
-                        <FormComponent {...formProps} />
+                        {children}
                     </div>
                 </div>
             )}

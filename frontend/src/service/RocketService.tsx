@@ -4,27 +4,14 @@ type Data = {
   name: string
 }
 
-// export const RenderRocket: React.FC = () => {
-// const data = GetRocket();
-// console.log(data);
-
-// return (
-{/* <div>
-  {data && data.length > 0 ? (
-    <RocketTable data={data} />
-  ) : (
-    <div>No data available</div> // call notification
-  )}
-</div> */}
-// )
-// }
-
 export const GetRocket = async () => {
   const response = await fetch('http://localhost:80/rocket')
   if (!response.ok) {
     throw new Error('Error in request') // call notification
   }
   const jsonData = await response.json()
+  console.log(jsonData);
+
   return jsonData;
 }
 

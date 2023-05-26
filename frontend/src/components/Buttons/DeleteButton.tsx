@@ -1,28 +1,19 @@
 import React from "react";
 import "../../assets/CSS/buttons.css";
-import { DeleteCrew } from "../../service/CrewService";
-import { DeleteRocket } from "../../service/RocketService";
 
 type DeleteButtonProps = {
   id: number;
-  onDelete: (id: number) => void;
-  entityName: string
+  deleteRocket: (id: number) => Promise<void>;
 };
 
-const DeleteButton: React.FC<DeleteButtonProps> = ({ entityName, id, onDelete }) => {
-  const handleDelete = () => {
-    console.log(`Deleting row in ${entityName}`);
+const DeleteButton: React.FC<DeleteButtonProps> = ({ id, deleteRocket }) => {
 
-    onDelete(id);
-    if (entityName === 'Rocket') {
-      DeleteRocket(id);
-    } else if (entityName === 'Crew') {
-      DeleteCrew(id);
-    }
-  };
+  const handleDeleteRocket = () => {
+    deleteRocket(id)
+  }
 
   return (
-    <button className="del_btn" onClick={handleDelete}>
+    <button className="del_btn" onClick={handleDeleteRocket}>
       <i className="fa fa-delete-left"></i>
     </button>
   );
