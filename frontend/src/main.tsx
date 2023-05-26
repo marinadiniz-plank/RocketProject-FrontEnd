@@ -5,7 +5,7 @@ import App from './App.tsx';
 
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { default as Crew, default as Crewman } from './pages/Crew.tsx';
+import { default as Crew, default as Crewman } from './pages/Crew/Crew.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Launch from './pages/Launch.tsx';
