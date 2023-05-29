@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import '../../../assets/CSS/form.css';
-import { Data } from './RocketData';
+import { Data } from './CrewmanData';
 
 export type FormProps = {
   onSubmit: (formData: Data) => void;
 };
 
-export const RocketAddForm: React.FC<FormProps> = ({
+export const CrewmanAddForm: React.FC<FormProps> = ({
   onSubmit,
 }) => {
-  const [formData, setFormData] = useState<Data>({ id: 0, name: '' });
+  const [formData, setFormData] = useState<Data>({ id: 0, name: '', patent: '' });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
@@ -28,7 +28,7 @@ export const RocketAddForm: React.FC<FormProps> = ({
 
   return (
     <>
-      <h5 className='form-h5'>Please, provide a name for this new rocket</h5>
+      <h5 className='form-h5'>Please, provide a name for this new crewman</h5>
       <form className="form" onSubmit={handleFormSubmit}>
         <div className="form-field">
           <label htmlFor="name">Name:</label>
@@ -37,6 +37,14 @@ export const RocketAddForm: React.FC<FormProps> = ({
             placeholder="name"
             type="text"
             value={formData.name}
+            onChange={handleInputChange}
+          />
+          <label htmlFor="patent">Patent:</label>
+          <input
+            id="patent"
+            placeholder="patent"
+            type="text"
+            value={formData.patent}
             onChange={handleInputChange}
           />
         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../assets/CSS/form.css';
-import { Data } from './RocketData';
+import { Data } from './CrewmanData';
 
 export type FormProps = {
   formLabels: string[];
@@ -8,7 +8,7 @@ export type FormProps = {
   onSubmit: (id: number, formData: Data) => void;
 };
 
-export const RocketEditForm: React.FC<FormProps> = ({
+export const CrewmanEditForm: React.FC<FormProps> = ({
   formLabels,
   initialData,
   onSubmit,
@@ -32,7 +32,7 @@ export const RocketEditForm: React.FC<FormProps> = ({
 
   return (
     <>
-      <h5 className='form-h5'>Please, give a new name for this rocket</h5>
+      <h5 className='form-h5'>Please, give a new name for this crewman</h5>
       <form className="form" onSubmit={handleFormSubmit} >
         {formLabels.map((item, index) => {
           if (item === 'id') return null; // Exclude 'id' field from rendering

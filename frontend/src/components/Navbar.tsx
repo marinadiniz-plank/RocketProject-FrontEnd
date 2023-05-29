@@ -1,6 +1,6 @@
-import '../assets/CSS/nav.css'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import '../assets/CSS/nav.css'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,8 +10,8 @@ const Navbar = () => {
     <div className="nav">
       <div style={{ width: isOpen ? '200px' : '75px' }} className="sidebar">
         <div className="top_section">
-      
-            <i className="fas fa-bars" id="navbar_btn" onClick={toggle} />
+
+          <i className="fas fa-bars" id="navbar_btn" onClick={toggle} />
 
         </div>
         <div className="content"  >
@@ -37,11 +37,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      {/* 
-      <i className="fas fa-bars" id="navbar_btn" onClick={closeNavbar}></i>
-      */}
     </div>
   )
 }
-// style={{marginLeft: isOpen ? "50px" : "0px"}}
 export default Navbar

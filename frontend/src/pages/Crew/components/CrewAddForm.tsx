@@ -19,8 +19,8 @@ export const CrewAddForm: React.FC<FormProps> = ({
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData);
     formData["crewman"] = JSON.parse(`[${formData.crewman}]`)
+    console.log(formData);
     onSubmit(formData);
   };
 
