@@ -31,7 +31,7 @@ export const CrewEditForm: React.FC<FormProps> = ({
 
     const modal = document.querySelector('.modal') as HTMLElement;
     if (modal) {
-      modal.style.display = 'none'; // Hide the modal by setting its display to 'none'
+      modal.style.display = 'none';
     }
   };
 

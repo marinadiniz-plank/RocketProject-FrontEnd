@@ -27,6 +27,10 @@ export const LaunchAddForm: React.FC<FormProps> = ({
     console.log(formData);
 
     onSubmit(formData);
+    const modal = document.querySelector('.modal') as HTMLElement;
+    if (modal) {
+      modal.style.display = 'none';
+    }
   };
 
   return (
