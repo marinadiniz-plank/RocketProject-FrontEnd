@@ -4,7 +4,6 @@ import bannerImg from "../assets/header-img.svg";
 import Header from "../components/Header";
 
 function Home() {
-
     return (
         <>
             <Header pageTitle="RocketProject" />
@@ -20,7 +19,6 @@ function Home() {
                 </h4>
                 <img className="logo" src={bannerImg} alt="React Logo" />
             </div>
-
             <Outlet />
         </>
     );
