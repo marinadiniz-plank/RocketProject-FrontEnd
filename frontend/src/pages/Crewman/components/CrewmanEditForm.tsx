@@ -24,10 +24,6 @@ export const CrewmanEditForm: React.FC<FormProps> = ({
     event.preventDefault();
     onSubmit(formData.id, formData);
 
-    const modal = document.querySelector('.modal') as HTMLElement;
-    if (modal) {
-      modal.style.display = 'none';
-    }
   };
 
   return (

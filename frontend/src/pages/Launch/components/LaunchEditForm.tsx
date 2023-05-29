@@ -25,11 +25,6 @@ export const LaunchEditForm: React.FC<FormProps> = ({
     onSubmit(formData.id, formData);
 
     console.log(formData);
-
-    const modal = document.querySelector('.modal') as HTMLElement;
-    if (modal) {
-      modal.style.display = 'none';
-    }
   };
 
   return (
