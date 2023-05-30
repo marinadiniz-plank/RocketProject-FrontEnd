@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
 import Header from "../../components/Header";
+import { Loading } from "../../components/Loading";
 import { useCrew } from "../../hooks/useCrews";
 import { CrewAddForm } from "./components/CrewAddForm";
 import { Data } from "./components/CrewData";
@@ -27,8 +28,7 @@ function Crewman() {
         {data && data.length > 0 ? (
           <CrewTable data={data} updateCrew={updateCrew} deleteCrew={deleteCrew} />
         ) : (
-          <div>No data available</div> // call notification
-        )}
+          <Loading />)}
       </div>
       <Outlet />
     </>

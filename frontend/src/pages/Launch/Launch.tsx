@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
 import Header from "../../components/Header";
+import { Loading } from "../../components/Loading";
 import { useLaunch } from "../../hooks/useLaunch";
 import { LaunchAddForm } from "./components/LaunchAddForm";
 import { Data } from "./components/LaunchData";
@@ -28,7 +29,7 @@ function Launch() {
         {data && data.length > 0 ? (
           <LaunchTable data={data} updateLaunch={updateLaunch} deleteLaunch={deleteLaunch} />
         ) : (
-          <div>No data available</div> // call notification
+          <Loading />
         )}
       </div>
       <Outlet />

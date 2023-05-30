@@ -2,7 +2,7 @@ import { Data } from "../pages/Crewman/components/CrewmanData";
 
 
 export const GetCrewman = async () => {
-  const response = await fetch('http://localhost:80/crewman');
+  const response = await fetch('https://rocket-project.vercel.app/crewman');
   if (!response.ok) {
     throw new Error('Error in request');                   // call notification
   }
@@ -11,7 +11,7 @@ export const GetCrewman = async () => {
 };
 
 export const SubmitCrewman = async (formData: Partial<Data>) => {
-  const response = await fetch('http://localhost:80/crewman', {
+  const response = await fetch('https://rocket-project.vercel.app/crewman', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const SubmitCrewman = async (formData: Partial<Data>) => {
 };
 
 export const UpdateCrewman = async (id: number, formData: Partial<Data>) => {
-  const response = await fetch(`http://localhost:80/crewman/${id}`, {
+  const response = await fetch(`https://rocket-project.vercel.app/crewman/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export const UpdateCrewman = async (id: number, formData: Partial<Data>) => {
 };
 
 export const DeleteCrewman = async (id: number) => {
-  const response = await fetch(`http://localhost:80/crewman/${id}`, {
+  const response = await fetch(`https://rocket-project.vercel.app/crewman/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

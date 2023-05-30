@@ -1,7 +1,7 @@
 import { Data } from "../pages/Launch/components/LaunchData";
 
 export const GetLaunch = async () => {
-  const response = await fetch('http://localhost:80/launch');
+  const response = await fetch('https://rocket-project.vercel.app/launch');
   if (!response.ok) {
     throw new Error('Error in request');
   }
@@ -12,7 +12,7 @@ export const GetLaunch = async () => {
 export const SubmitLaunch = async (formData: Partial<Data>) => {
   console.log(formData);
 
-  const response = await fetch('http://localhost:80/launch', {
+  const response = await fetch('https://rocket-project.vercel.app/launch', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export const SubmitLaunch = async (formData: Partial<Data>) => {
 };
 
 export const UpdateLaunch = async (id: number, formData: Partial<Data>) => {
-  const response = await fetch(`http://localhost:80/launch/${id}`, {
+  const response = await fetch(`https://rocket-project.vercel.app/launch/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export const UpdateLaunch = async (id: number, formData: Partial<Data>) => {
 };
 
 export const DeleteLaunch = async (id: number) => {
-  const response = await fetch(`http://localhost:80/launch/${id}`, {
+  const response = await fetch(`https://rocket-project.vercel.app/launch/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

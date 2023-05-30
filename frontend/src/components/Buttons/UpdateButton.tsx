@@ -10,7 +10,6 @@ type EditProps = {
 
 const UpdateButton: React.FC<EditProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log("click");
 
   return (
     <>

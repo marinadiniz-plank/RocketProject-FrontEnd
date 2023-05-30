@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
 import Header from "../../components/Header";
+import { Loading } from "../../components/Loading";
 import { useRocket } from "../../hooks/useRockets";
 import { RocketAddForm } from "./components/RocketAddForm";
 import { Data } from "./components/RocketData";
@@ -27,7 +28,7 @@ function Rocket() {
         {data && data.length > 0 ? (
           <RocketTable data={data} updateRocket={updateRocket} deleteRocket={deleteRocket} />
         ) : (
-          <div>No data available</div> // call notification
+          <Loading />
         )}
       </div>
       <Outlet />

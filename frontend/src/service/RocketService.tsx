@@ -5,7 +5,7 @@ type Data = {
 }
 
 export const GetRocket = async () => {
-  const response = await fetch('http://localhost:80/rocket')
+  const response = await fetch('https://rocket-project.vercel.app/rocket')
   if (!response.ok) {
     throw new Error('Error in request') // call notification
   }
@@ -16,7 +16,7 @@ export const GetRocket = async () => {
 }
 
 export const SubmitRocket = async (formData: Data) => {
-  const response = await fetch('http://localhost:80/rocket', {
+  const response = await fetch('https://rocket-project.vercel.app/rocket', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export const SubmitRocket = async (formData: Data) => {
 };
 
 export const UpdateRocket = async (id: number, formData: Partial<Data>) => {
-  const response = await fetch(`http://localhost:80/rocket/${id}`, {
+  const response = await fetch(`https://rocket-project.vercel.app/rocket/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export const UpdateRocket = async (id: number, formData: Partial<Data>) => {
 };
 
 export const DeleteRocket = async (id: number) => {
-  const response = await fetch(`http://localhost:80/rocket/${id}`, {
+  const response = await fetch(`https://rocket-project.vercel.app/rocket/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
