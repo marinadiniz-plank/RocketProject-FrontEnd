@@ -12,7 +12,11 @@ const AddButton: React.FC<AddButtonProps> = ({ title, children }) => {
 
 	return (
 		<>
-			<button type="submit" className="add_btn" onClick={() => setIsOpen(true)}>
+			<button
+				type="submit"
+				className="add_btn"
+				onClick={() => setIsOpen(true)}
+			>
 				Add
 			</button>
 			{isOpen && (

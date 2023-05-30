@@ -23,7 +23,7 @@ export const Modal: React.FC<ModalProps> = ({
 			{isOpen && (
 				<div className="modal">
 					<div className="modal-content">
-						<button className="close" onClick={handleClose}>
+						<button type="button" className="close" onClick={handleClose}>
 							&times;
 						</button>
 						<h2>{title}</h2>
