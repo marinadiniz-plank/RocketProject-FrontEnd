@@ -29,6 +29,8 @@ export const SubmitLaunch = async (formData: Partial<Data>) => {
 };
 
 export const UpdateLaunch = async (id: number, formData: Partial<Data>) => {
+  console.log(formData);
+
   const response = await fetch(`https://rocket-project.vercel.app/launch/${id}`, {
     method: 'PUT',
     headers: {

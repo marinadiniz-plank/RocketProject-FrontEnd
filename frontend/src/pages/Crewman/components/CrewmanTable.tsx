@@ -34,8 +34,8 @@ const CrewmanTable: React.FC<CrewmanTableModal> = ({ data, updateCrewman, delete
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((item: Data, index) => (
-                            <tr key={index}>
+                        {data.map((item: Data) => (
+                            <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.patent}</td>
@@ -47,7 +47,7 @@ const CrewmanTable: React.FC<CrewmanTableModal> = ({ data, updateCrewman, delete
                                 </td>
                                 <td className="del_btn">
                                     {/* {React.Children.toArray(children)[1]} */}
-                                    <button className="del_btn" onClick={() => handleDeleteCrewman(item.id)}>
+                                    <button type="button" className="del_btn" onClick={() => handleDeleteCrewman(item.id)}>
                                         <i className="fa fa-delete-left"></i>
                                     </button>
                                 </td>

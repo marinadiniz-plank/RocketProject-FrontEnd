@@ -20,12 +20,7 @@ export const CrewAddForm: React.FC<FormProps> = ({
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     formData["crewman"] = JSON.parse(`[${formData.crewman}]`)
-    console.log(formData);
     onSubmit(formData);
-    const modal = document.querySelector('.modal') as HTMLElement;
-    if (modal) {
-      modal.style.display = 'none';
-    }
   };
 
   return (

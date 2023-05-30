@@ -22,9 +22,10 @@ export const LaunchEditForm: React.FC<FormProps> = ({
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const successString = formData["success"].toString();
+    formData["success"] = successString === "true" ? true : false;
     onSubmit(formData.id, formData);
 
-    console.log(formData);
   };
 
   return (

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../../../assets/CSS/form.css';
 import { Data } from './LaunchData';
 
-
 export type FormProps = {
   onSubmit: (formData: Data) => void;
 };
@@ -23,14 +22,9 @@ export const LaunchAddForm: React.FC<FormProps> = ({
     formData["crew"] = JSON.parse(`${formData.crew}`)
 
     const successString = formData["success"].toString();
-    formData["success"] = successString === "true";
-    console.log(formData);
+    formData["success"] = successString === "true" ? true : false;
 
     onSubmit(formData);
-    const modal = document.querySelector('.modal') as HTMLElement;
-    if (modal) {
-      modal.style.display = 'none';
-    }
   };
 
   return (
@@ -41,7 +35,7 @@ export const LaunchAddForm: React.FC<FormProps> = ({
           <label htmlFor="launchCode">Launch Code:</label>
           <input
             id="launchCode"
-            placeholder="3A0B"
+            placeholder="Name"
             type="text"
             onChange={handleInputChange}
           />
@@ -56,7 +50,7 @@ export const LaunchAddForm: React.FC<FormProps> = ({
           <input
             id="success"
             placeholder="True"
-            type="boolean"
+            type="text"
             onChange={handleInputChange}
           />
           <label htmlFor="rocket">Rocket:</label>

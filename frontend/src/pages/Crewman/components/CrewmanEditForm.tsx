@@ -30,10 +30,10 @@ export const CrewmanEditForm: React.FC<FormProps> = ({
     <>
       <h5 className='form-h5'>Please, give a new name for this crewman</h5>
       <form className="form" onSubmit={handleFormSubmit} >
-        {formLabels.map((item, index) => {
+        {formLabels.map((item) => {
           if (item === 'id') return null; // Exclude 'id' field from rendering
           return (
-            <div key={index} className="form-field">
+            <div key={item} className="form-field">
               <label htmlFor={item}>{item}</label>
               <input
                 id={item}

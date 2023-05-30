@@ -19,11 +19,6 @@ export const RocketAddForm: React.FC<FormProps> = ({
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSubmit(formData);
-
-    const modal = document.querySelector('.modal') as HTMLElement;
-    if (modal) {
-      modal.style.display = 'none';
-    }
   };
 
   return (

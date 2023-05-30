@@ -35,8 +35,8 @@ export const CrewTable: React.FC<CrewTableModal> = ({ data, updateCrew, deleteCr
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((item: Data, index) => (
-                            <tr key={index}>
+                        {data.map((item: Data) => (
+                            <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.crewman.map(crewmanObj => crewmanObj.id).join(", ")}</td>
@@ -48,7 +48,7 @@ export const CrewTable: React.FC<CrewTableModal> = ({ data, updateCrew, deleteCr
                                 </td>
                                 <td className="del_btn">
                                     {/* {React.Children.toArray(children)[1]} */}
-                                    <button className="del_btn" onClick={() => handleDeleteCrew(item.id)}>
+                                    <button type="button" className="del_btn" onClick={() => handleDeleteCrew(item.id)}>
                                         <i className="fa fa-delete-left"></i>
                                     </button>
                                 </td>

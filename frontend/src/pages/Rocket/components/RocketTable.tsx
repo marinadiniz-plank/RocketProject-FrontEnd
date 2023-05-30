@@ -38,8 +38,8 @@ const RocketTable: React.FC<RocketTableModal> = ({ data, updateRocket, deleteRoc
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((item: Data, index) => (
-                            <tr key={index}>
+                        {data.map((item: Data) => (
+                            <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td className="edit_btn">
@@ -50,7 +50,7 @@ const RocketTable: React.FC<RocketTableModal> = ({ data, updateRocket, deleteRoc
                                 </td>
                                 <td className="del_btn">
                                     {/* {React.Children.toArray(children)[1]} */}
-                                    <button className="del_btn" onClick={() => handleDeleteRocket(item.id)}>
+                                    <button type="button" className="del_btn" onClick={() => handleDeleteRocket(item.id)}>
                                         <i className="fa fa-delete-left"></i>
                                     </button>
                                 </td>

@@ -22,17 +22,22 @@ export const RocketEditForm: React.FC<FormProps> = ({
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+
+    console.log(formData);
+
     onSubmit(formData.id, formData);
+
   };
 
   return (
     <>
       <h5 className='form-h5'>Please, give a new name for this rocket</h5>
       <form className="form" onSubmit={handleFormSubmit} >
-        {formLabels.map((item, index) => {
-          if (item === 'id') return null; // Exclude 'id' field from rendering
+        {formLabels.map((item) => {
+          if (item === 'id') return null;
           return (
-            <div key={index} className="form-field">
+            <div key={item} className="form-field">
               <label htmlFor={item}>{item}</label>
               <input
                 id={item}

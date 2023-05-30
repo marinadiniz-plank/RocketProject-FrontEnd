@@ -38,8 +38,8 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({ data, updateLaunch, de
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((item: Data, index) => (
-                            <tr key={index}>
+                        {data.map((item: Data) => (
+                            <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.launchCode}</td>
                                 <td>{item.date}</td>
@@ -53,7 +53,7 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({ data, updateLaunch, de
 
                                 </td>
                                 <td className="del_btn">
-                                    <button className="del_btn" onClick={() => handleDeleteLaunch(item.id)}>
+                                    <button type="button" className="del_btn" onClick={() => handleDeleteLaunch(item.id)}>
                                         <i className="fa fa-delete-left"></i>
                                     </button>
                                 </td>
