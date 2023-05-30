@@ -8,34 +8,37 @@ import { LaunchAddForm } from "./components/LaunchAddForm";
 import { Data } from "./components/LaunchData";
 import { LaunchTable } from "./components/LaunchTable";
 
-
 function Launch() {
-  const [data, { getLaunchs, addLaunch, updateLaunch, deleteLaunch }] = useLaunch();
-  useEffect(() => {
-    getLaunchs();
-  }, []);
+	const [data, { getLaunchs, addLaunch, updateLaunch, deleteLaunch }] =
+		useLaunch();
+	useEffect(() => {
+		getLaunchs();
+	}, []);
 
-  const handleAddLaunch = (launch: Data) => {
-    addLaunch(launch);
-  };
+	const handleAddLaunch = (launch: Data) => {
+		addLaunch(launch);
+	};
 
-  return (
-    <>
-      <Header pageTitle="Launch" />
-      <AddButton title={"Launch"}>
-        <LaunchAddForm onSubmit={handleAddLaunch} />
-      </AddButton>
-      <div>
-        {data && data.length > 0 ? (
-          <LaunchTable data={data} updateLaunch={updateLaunch} deleteLaunch={deleteLaunch} />
-        ) : (
-          <Loading />
-        )}
-      </div>
-      <Outlet />
-    </>
-  );
+	return (
+		<>
+			<Header pageTitle="Launch" />
+			<AddButton title={"Launch"}>
+				<LaunchAddForm onSubmit={handleAddLaunch} />
+			</AddButton>
+			<div>
+				{data && data.length > 0 ? (
+					<LaunchTable
+						data={data}
+						updateLaunch={updateLaunch}
+						deleteLaunch={deleteLaunch}
+					/>
+				) : (
+					<Loading />
+				)}
+			</div>
+			<Outlet />
+		</>
+	);
 }
-
 
 export default Launch;

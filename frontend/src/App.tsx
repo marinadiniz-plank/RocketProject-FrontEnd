@@ -1,16 +1,14 @@
-
 import Footer from "./components/Footer";
 
-
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return (
-    <>
-      <Outlet />
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Outlet />
+			<Footer />
+		</>
+	);
 }
 
 export default App;

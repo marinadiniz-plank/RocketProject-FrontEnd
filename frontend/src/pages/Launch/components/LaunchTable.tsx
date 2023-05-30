@@ -1,25 +1,27 @@
-import React from "react";
+/* eslint-disable prettier/prettier */
 import "../../../assets/CSS/table.css";
 import UpdateButton from "../../../components/Buttons/UpdateButton";
 import { Data } from "./LaunchData";
 import { LaunchEditForm } from "./LaunchEditForm";
 
-
 type LaunchTableModal = {
     data: Data[];
     updateLaunch: (id: number, Launch: Partial<Data>) => Promise<void>;
     deleteLaunch: (id: number) => Promise<void>;
-}
+};
 
-export const LaunchTable: React.FC<LaunchTableModal> = ({ data, updateLaunch, deleteLaunch }) => {
-
+export const LaunchTable: React.FC<LaunchTableModal> = ({
+    data,
+    updateLaunch,
+    deleteLaunch,
+}) => {
     const handleUpdateLaunch = (id: number, formData: Data) => {
-        updateLaunch(id, formData)
-    }
+        updateLaunch(id, formData);
+    };
 
     const handleDeleteLaunch = (id: number) => {
-        deleteLaunch(id)
-    }
+        deleteLaunch(id);
+    };
 
     return (
         <div className="data-div">
@@ -47,13 +49,19 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({ data, updateLaunch, de
                                 <td>{item.rocket.id}</td>
                                 <td>{item.crew.id}</td>
                                 <td className="edit_btn">
-                                    <UpdateButton title={"Launch"} >
-                                        <LaunchEditForm initialData={item} onSubmit={handleUpdateLaunch} />
+                                    <UpdateButton title={"Launch"}>
+                                        <LaunchEditForm
+                                            initialData={item}
+                                            onSubmit={handleUpdateLaunch}
+                                        />
                                     </UpdateButton>
-
                                 </td>
                                 <td className="del_btn">
-                                    <button type="button" className="del_btn" onClick={() => handleDeleteLaunch(item.id)}>
+                                    <button
+                                        type="button"
+                                        className="del_btn"
+                                        onClick={() => handleDeleteLaunch(item.id)}
+                                    >
                                         <i className="fa fa-delete-left"></i>
                                     </button>
                                 </td>

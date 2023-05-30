@@ -1,81 +1,77 @@
-import React, { useState } from 'react';
-import '../../../assets/CSS/form.css';
-import { Data } from './LaunchData';
-
+import React, { useState } from "react";
+import "../../../assets/CSS/form.css";
+import { Data } from "./LaunchData";
 
 export type FormProps = {
-  initialData: Data;
-  onSubmit: (id: number, formData: Data) => void;
+	initialData: Data;
+	onSubmit: (id: number, formData: Data) => void;
 };
 
 export const LaunchEditForm: React.FC<FormProps> = ({
-  initialData,
-  onSubmit,
+	initialData,
+	onSubmit,
 }) => {
-  const [formData, setFormData] = useState<Data>(initialData);
+	const [formData, setFormData] = useState<Data>(initialData);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = event.target;
-    setFormData((prevData) => ({ ...prevData, [id]: value }));
-  };
+	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { id, value } = event.target;
+		setFormData((prevData) => ({ ...prevData, [id]: value }));
+	};
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
 
-    const successString = formData["success"].toString();
-    formData["success"] = successString === "true" ? true : false;
-    onSubmit(formData.id, formData);
+		const successString = formData["success"].toString();
+		formData["success"] = successString === "true" ? true : false;
+		onSubmit(formData.id, formData);
+	};
 
-  };
+	return (
+		<>
+			<h5 className="form-h5">Please, give a new name for this launch</h5>
+			<form className="form" onSubmit={handleFormSubmit}>
+				<div className="form-field">
+					<label htmlFor={"launchCode"}>Launch Code:</label>
+					<input
+						id={"launchCode"}
+						value={formData.launchCode}
+						type="text"
+						onChange={handleInputChange}
+					/>
+					<label htmlFor={"date"}>Date:</label>
+					<input
+						id={"date"}
+						value={new Date(formData.date).toLocaleDateString()}
+						type="date"
+						onChange={handleInputChange}
+					/>
+					<label htmlFor={"success"}>Success:</label>
+					<input
+						id={"success"}
+						value={formData.success.toString()}
+						type="text"
+						onChange={handleInputChange}
+					/>
+					<label htmlFor={"rocket"}>Rocket:</label>
+					<input
+						id={"rocket"}
+						value={formData.rocket.id}
+						type="text"
+						onChange={handleInputChange}
+					/>
+					<label htmlFor={"crew"}>Crew:</label>
+					<input
+						id={"crew"}
+						value={formData.crew.id}
+						type="text"
+						onChange={handleInputChange}
+					/>
+				</div>
 
-  return (
-    <>
-      <h5 className='form-h5'>Please, give a new name for this launch</h5>
-      <form className="form" onSubmit={handleFormSubmit} >
-
-        <div className="form-field">
-          <label htmlFor={"launchCode"}>Launch Code:</label>
-          <input
-            id={"launchCode"}
-            value={formData.launchCode}
-            type="text"
-            onChange={handleInputChange}
-          />
-          <label htmlFor={"date"}>Date:</label>
-          <input
-            id={"date"}
-            value={new Date(formData.date).toLocaleDateString()}
-
-            type="date"
-            onChange={handleInputChange}
-          />
-          <label htmlFor={"success"}>Success:</label>
-          <input
-            id={"success"}
-            value={formData.success.toString()}
-            type="text"
-            onChange={handleInputChange}
-          />
-          <label htmlFor={"rocket"}>Rocket:</label>
-          <input
-            id={"rocket"}
-            value={formData.rocket.id}
-            type="text"
-            onChange={handleInputChange}
-          />
-          <label htmlFor={"crew"}>Crew:</label>
-          <input
-            id={"crew"}
-            value={formData.crew.id}
-            type="text"
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <button className="btn" type="submit">
-          <h4>Update</h4>
-        </button>
-      </form>
-    </>
-  );
+				<button className="btn" type="submit">
+					<h4>Update</h4>
+				</button>
+			</form>
+		</>
+	);
 };

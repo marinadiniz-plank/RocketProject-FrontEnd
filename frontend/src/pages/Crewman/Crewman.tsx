@@ -8,33 +8,37 @@ import { CrewmanAddForm } from "./components/CrewmanAddForm";
 import { Data } from "./components/CrewmanData";
 import CrewmanTable from "./components/CrewmanTable";
 
-
 function Crewman() {
-  const [data, { getCrewmans, addCrewman, updateCrewman, deleteCrewman }] = useCrewman();
-  useEffect(() => {
-    getCrewmans();
-  }, []);
+	const [data, { getCrewmans, addCrewman, updateCrewman, deleteCrewman }] =
+		useCrewman();
+	useEffect(() => {
+		getCrewmans();
+	}, []);
 
-  const handleAddCrewman = (cremman: Data) => {
-    addCrewman(cremman);
-  };
+	const handleAddCrewman = (cremman: Data) => {
+		addCrewman(cremman);
+	};
 
-  return (
-    <>
-      <Header pageTitle="Crewman" />
-      <AddButton title={"Crewman"}>
-        <CrewmanAddForm onSubmit={handleAddCrewman} />
-      </AddButton>
-      <div>
-        {data && data.length > 0 ? (
-          <CrewmanTable data={data} updateCrewman={updateCrewman} deleteCrewman={deleteCrewman} />
-        ) : (
-          <Loading />)}
-      </div>
-      <Outlet />
-    </>
-  );
+	return (
+		<>
+			<Header pageTitle="Crewman" />
+			<AddButton title={"Crewman"}>
+				<CrewmanAddForm onSubmit={handleAddCrewman} />
+			</AddButton>
+			<div>
+				{data && data.length > 0 ? (
+					<CrewmanTable
+						data={data}
+						updateCrewman={updateCrewman}
+						deleteCrewman={deleteCrewman}
+					/>
+				) : (
+					<Loading />
+				)}
+			</div>
+			<Outlet />
+		</>
+	);
 }
-
 
 export default Crewman;
