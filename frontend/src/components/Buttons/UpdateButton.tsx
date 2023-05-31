@@ -12,15 +12,15 @@ const UpdateButton: React.FC<EditProps> = ({ title, children }) => {
 
 	return (
 		<>
-			<button
-				type="submit"
+			<a
+				href="#"
 				className="edit_btn"
 				onClick={() => {
 					setIsOpen(true);
 				}}
 			>
 				<i className="fa fa-pen"></i>
-			</button>
+			</a>
 			{isOpen && (
 				<Modal isOpen={isOpen} setIsOpen={setIsOpen} title={title}>
 					{children}

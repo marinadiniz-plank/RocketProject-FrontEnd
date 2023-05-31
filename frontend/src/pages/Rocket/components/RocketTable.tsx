@@ -55,13 +55,13 @@ const RocketTable: React.FC<RocketTableModal> = ({
 								</td>
 								<td className="del_btn">
 									{/* {React.Children.toArray(children)[1]} */}
-									<button
-										type="button"
+									<a
+										href="#"
 										className="del_btn"
 										onClick={() => handleDeleteRocket(item.id)}
 									>
 										<i className="fa fa-delete-left"></i>
-									</button>
+									</a>
 								</td>
 							</tr>
 						))}

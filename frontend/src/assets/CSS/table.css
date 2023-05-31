@@ -1,87 +1,87 @@
 .data-div {
-  display: flex;
-  flex-direction: column;
-  height: 77vh;
-  padding: auto;
+	display: flex;
+	flex-direction: column;
+	height: 72vh;
+	padding: auto;
 }
 
 .divTable {
-  padding: 10px;
-  width: auto;
-  height: auto;
+	padding: 10px;
+	width: auto;
+	height: auto;
 
-  overflow: auto;
-  color: azure;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  border-radius: 30px;
+	overflow: auto;
+	color: azure;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	border-radius: 30px;
 }
 
 .divTable::-webkit-scrollbar {
-  width: 12px;
-  background-color: whitesmoke;
+	width: 12px;
+	background-color: whitesmoke;
 }
 
 .divTable::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: darkgray;
+	border-radius: 20px;
+	background-color: darkgray;
 }
 
 table {
-  width: calc(100% / var(--col-count));
+	width: calc(100% / var(--col-count));
 
-  border-spacing: 10px;
-  word-break: break-all;
-  border-collapse: collapse;
-  display: table;
+	border-spacing: 10px;
+	word-break: break-all;
+	border-collapse: collapse;
+	display: table;
 }
 
 thead {
-  background-color: #171923;
+	background-color: #171923;
 }
 
 tr {
-  border-bottom: 1px solid rgb(238, 235, 235) !important;
+	border-bottom: 1px solid rgb(238, 235, 235) !important;
 }
 
 tbody tr td {
-  justify-content: center;
-  text-align: center;
-  vertical-align: text-top;
-  padding: 6px;
-  max-width: 50px;
+	justify-content: center;
+	text-align: center;
+	vertical-align: text-top;
+	padding: 6px;
+	max-width: 50px;
 }
 
 thead tr th {
-  padding-right: 40px;
-  padding-left: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 50px;
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 50px;
 
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 tbody tr {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .edit_button::before {
-  font: var(--fa-font-solid);
-  content: '\f044';
+	font: var(--fa-font-solid);
+	content: "\f044";
 }
 
 .delete_button::before {
-  font: var(--fa-font-solid);
-  content: '\f1f8';
+	font: var(--fa-font-solid);
+	content: "\f1f8";
 }
 
 .loading {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 10%;
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	width: 10%;
 }
