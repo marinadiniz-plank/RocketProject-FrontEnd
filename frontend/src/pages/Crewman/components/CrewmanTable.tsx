@@ -42,7 +42,7 @@ const CrewmanTable: React.FC<CrewmanTableModal> = ({
 								<td>{item.id}</td>
 								<td>{item.name}</td>
 								<td>{item.patent}</td>
-								<td className="edit_btn">
+								<td className="edit_col">
 									<UpdateButton title={"Crewman"}>
 										<CrewmanEditForm
 											formLabels={Object.keys(item)}
@@ -51,7 +51,7 @@ const CrewmanTable: React.FC<CrewmanTableModal> = ({
 										/>
 									</UpdateButton>
 								</td>
-								<td className="del_btn">
+								<td className="del_col">
 									{/* {React.Children.toArray(children)[1]} */}
 									<button
 										type="button"

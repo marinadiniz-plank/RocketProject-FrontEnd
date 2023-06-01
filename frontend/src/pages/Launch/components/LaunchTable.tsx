@@ -48,7 +48,7 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({
                                 <td>{item.success.toLocaleString()}</td>
                                 <td>{item.rocket.id}</td>
                                 <td>{item.crew.id}</td>
-                                <td className="edit_btn">
+                                <td className="edit_col">
                                     <UpdateButton title={"Launch"}>
                                         <LaunchEditForm
                                             initialData={item}
@@ -56,7 +56,7 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({
                                         />
                                     </UpdateButton>
                                 </td>
-                                <td className="del_btn">
+                                <td className="del_col">
                                     <button
                                         type="button"
                                         className="del_btn"

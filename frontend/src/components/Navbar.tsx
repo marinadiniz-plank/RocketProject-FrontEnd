@@ -15,23 +15,33 @@ const Navbar = () => {
 				<div className="content">
 					<Link to="/">
 						<i className="fas fa-home"></i>
-						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>Home</span>
+						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
+							Home
+						</span>
 					</Link>
 					<Link to="/Rocket">
 						<i className="fas fa-light fa-rocket"></i>
-						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>Rocket</span>
+						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
+							Rocket
+						</span>
 					</Link>
 					<Link to="/Crewman">
 						<i className="fas fa-light fa-user"></i>
-						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>Crewman</span>
+						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
+							Crewman
+						</span>
 					</Link>
 					<Link to="/Crew">
 						<i className="fas fa-light fa-users"></i>
-						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>Crew</span>
+						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
+							Crew
+						</span>
 					</Link>
 					<Link to="/Launch">
 						<i className="fas fa-light fa-play"></i>
-						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>Launch</span>
+						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
+							Launch
+						</span>
 					</Link>
 				</div>
 			</div>

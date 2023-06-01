@@ -4,6 +4,8 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
+        "types": ["cypress"],
+
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -19,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "cypress/**/*.tsx", "cypress/e2e/header.cy.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

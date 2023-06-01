@@ -26,7 +26,11 @@ function Crewman() {
 			</AddButton>
 			<div>
 				{data && data.length > 0 ? (
-					<CrewTable data={data} updateCrew={updateCrew} deleteCrew={deleteCrew} />
+					<CrewTable
+						data={data}
+						updateCrew={updateCrew}
+						deleteCrew={deleteCrew}
+					/>
 				) : (
 					<Loading />
 				)}

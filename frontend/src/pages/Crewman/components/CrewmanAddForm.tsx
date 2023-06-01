@@ -25,7 +25,9 @@ export const CrewmanAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 
 	return (
 		<>
-			<h5 className="form-h5">Please, provide a name for this new crewman</h5>
+			<h5 className="form-h5">
+				Please, provide a name for this new crewman
+			</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
 					<label htmlFor="name">Name:</label>

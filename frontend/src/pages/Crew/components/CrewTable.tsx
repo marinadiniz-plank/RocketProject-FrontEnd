@@ -41,13 +41,20 @@ export const CrewTable: React.FC<CrewTableModal> = ({
 							<tr key={item.id}>
 								<td>{item.id}</td>
 								<td>{item.name}</td>
-								<td>{item.crewman.map((crewmanObj) => crewmanObj.id).join(", ")}</td>
-								<td className="edit_btn">
+								<td>
+									{item.crewman
+										.map((crewmanObj) => crewmanObj.id)
+										.join(", ")}
+								</td>
+								<td className="edit_col">
 									<UpdateButton title={"Crew"}>
-										<CrewEditForm initialData={item} onSubmit={handleUpdateCrew} />
+										<CrewEditForm
+											initialData={item}
+											onSubmit={handleUpdateCrew}
+										/>
 									</UpdateButton>
 								</td>
-								<td className="del_btn">
+								<td className="del_col">
 									{/* {React.Children.toArray(children)[1]} */}
 									<button
 										type="button"

@@ -44,7 +44,7 @@ const RocketTable: React.FC<RocketTableModal> = ({
 							<tr key={item.id}>
 								<td>{item.id}</td>
 								<td>{item.name}</td>
-								<td className="edit_btn">
+								<td className="edit_col">
 									<UpdateButton title={"Rocket"}>
 										<RocketEditForm
 											formLabels={Object.keys(item)}
@@ -53,7 +53,7 @@ const RocketTable: React.FC<RocketTableModal> = ({
 										/>
 									</UpdateButton>
 								</td>
-								<td className="del_btn">
+								<td className="del_col">
 									{/* {React.Children.toArray(children)[1]} */}
 									<a
 										href="#"
