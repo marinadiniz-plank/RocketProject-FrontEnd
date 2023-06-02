@@ -1,6 +1,8 @@
 import { Container, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const ErrorPage = () => {
+	const { t } = useTranslation();
 	return (
 		<Container
 			sx={{
@@ -27,7 +29,7 @@ const ErrorPage = () => {
 						fontFamily: "Source Code Pro, monospace",
 					}}
 				>
-					You are all alone here
+					{t("pages.404")}
 				</Typography>
 				<Typography
 					variant="h1"
