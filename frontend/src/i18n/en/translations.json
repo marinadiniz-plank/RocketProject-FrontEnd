@@ -4,7 +4,9 @@
 			"rocket": "Rocket",
 			"crewman": "Crewman",
 			"crew": "Crew",
-			"launch": "Launch"
+			"launch": "Launch",
+			"footer": "Biuld with ❤️ at",
+			"404": "You are all alone here"
 		},
 		"components": {
 			"nav": {

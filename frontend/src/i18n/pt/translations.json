@@ -4,7 +4,9 @@
 			"rocket": "Foguete",
 			"crewman": "Tripulante",
 			"crew": "Tripulação",
-			"launch": "Lançamento"
+			"launch": "Lançamento",
+			"footer": "Construído com ❤️ na",
+			"404": "Você está sozinho aqui"
 		},
 		"components": {
 			"nav": {

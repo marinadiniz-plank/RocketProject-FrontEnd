@@ -4,7 +4,9 @@
 			"rocket": "Fusée",
 			"crewman": "Homme d'équipage",
 			"crew": "Fusée",
-			"launch": "Lancement"
+			"launch": "Lancement",
+			"footer": "Construit avec ❤️ dans",
+			"404": "Tu es tout seul ici"
 		},
 		"components": {
 			"nav": {
