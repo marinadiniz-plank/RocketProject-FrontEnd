@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
 import Header from "../../components/Header";
@@ -10,6 +11,8 @@ import { CrewTable } from "./components/CrewTable";
 
 function Crewman() {
 	const [data, { getCrews, addCrew, updateCrew, deleteCrew }] = useCrew();
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		getCrews();
 	}, []);
@@ -20,8 +23,8 @@ function Crewman() {
 
 	return (
 		<>
-			<Header pageTitle="Crew" />
-			<AddButton title={"Crew"}>
+			<Header pageTitle={t("pages.crew")} />
+			<AddButton title={t("pages.crew")}>
 				<CrewAddForm onSubmit={handleAddCrew} />
 			</AddButton>
 			<div>

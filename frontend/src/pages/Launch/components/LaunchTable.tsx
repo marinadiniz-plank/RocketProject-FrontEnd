@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/table.css";
 import UpdateButton from "../../../components/Buttons/UpdateButton";
 import { Data } from "./LaunchData";
@@ -15,6 +16,7 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({
     updateLaunch,
     deleteLaunch,
 }) => {
+    const { t } = useTranslation();
     const handleUpdateLaunch = (id: number, formData: Data) => {
         updateLaunch(id, formData);
     };
@@ -30,13 +32,13 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>LaunchCode</th>
-                            <th>Date</th>
-                            <th>success</th>
-                            <th>Rocket</th>
-                            <th>Crew</th>
-                            <th className="edit">Editar</th>
-                            <th className="delete">Excluir</th>
+                            <th>{t("components.table.launchCode")}</th>
+                            <th>{t("components.table.date")}</th>
+                            <th>{t("components.table.success")}</th>
+                            <th>{t("components.table.rocket")}</th>
+                            <th>{t("components.table.crew")}</th>
+                            <th className="edit">{t("components.table.edit")}</th>
+                            <th className="delete">{t("components.table.delete")}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,7 +51,7 @@ export const LaunchTable: React.FC<LaunchTableModal> = ({
                                 <td>{item.rocket.id}</td>
                                 <td>{item.crew.id}</td>
                                 <td className="edit_col">
-                                    <UpdateButton title={"Launch"}>
+                                    <UpdateButton title={t("pages.launch")}>
                                         <LaunchEditForm
                                             initialData={item}
                                             onSubmit={handleUpdateLaunch}

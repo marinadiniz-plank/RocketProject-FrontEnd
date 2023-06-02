@@ -1,0 +1,63 @@
+{
+	"translation": {
+		"pages": {
+			"rocket": "Foguete",
+			"crewman": "Tripulante",
+			"crew": "Tripulação",
+			"launch": "Lançamento"
+		},
+		"components": {
+			"nav": {
+				"home": "Principal",
+				"rocket": "Foguete",
+				"crewman": "Tripulante",
+				"crew": "Tripulação",
+				"launch": "Lançamento"
+			},
+			"buttons": {
+				"add": "adicionar",
+				"edit": "editar",
+				"delete": "deletar"
+			},
+			"table": {
+				"name": "nome",
+				"edit": "editar",
+				"delete": "deletar",
+				"patent": "patente",
+				"crewmans": "tripulante",
+				"launchCode": "código de lançamento",
+				"date": "data",
+				"success": "sucesso",
+				"rocket": "foguete",
+				"crew": "tripulação"
+			},
+			"modal": {},
+			"form": {
+				"add": {
+					"salute": "Por favor, forneça um nome para este novo ",
+					"entities": {
+						"rocket": "foguete",
+						"crewman": "tripulante",
+						"crew": "tripulação",
+						"launch": "lançamento"
+					},
+					"labels": {
+						"name": "Nome",
+						"edit": "Editar",
+						"delete": "Deletar",
+						"patent": "Patente",
+						"crewmans": "Tripulação",
+						"launchCode": "Código de lançamento",
+						"date": "Data",
+						"success": "Succeso",
+						"rocket": "Foguete",
+						"crew": "Tripulação"
+					}
+				},
+				"edit": {
+					"salute": "Por favor preencha os dados que deseja atualizar "
+				}
+			}
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./LaunchData";
 
@@ -15,7 +16,7 @@ export const LaunchAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 		rocket: { id: 0, name: "" },
 		crew: { id: 0, name: "", crewman: [] },
 	});
-
+	const { t } = useTranslation();
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { id, value } = event.target;
 		setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -34,38 +35,51 @@ export const LaunchAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 
 	return (
 		<>
-			<h5 className="form-h5">Please, provide a name for this new crew</h5>
+			<h5 className="form-h5">
+				{t("components.form.add.salute")}
+				{t("components.form.add.entities.launch")}
+			</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
-					<label htmlFor="launchCode">Launch Code:</label>
+					<label htmlFor="launchCode">
+						{t("components.form.add.labels.launchCode")}:
+					</label>
 					<input
 						id="launchCode"
 						placeholder="Name"
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor="date">Date:</label>
+					<label htmlFor="date">
+						{t("components.form.add.labels.date")}:
+					</label>
 					<input
 						id="date"
 						placeholder="YYYY/MM/DD"
 						type="date"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor="success">Success:</label>
+					<label htmlFor="success">
+						{t("components.form.add.labels.success")}:
+					</label>
 					<input
 						id="success"
 						placeholder="True"
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor="rocket">Rocket:</label>
+					<label htmlFor="rocket">
+						{t("components.form.add.labels.rocket")}:
+					</label>
 					<input
 						id="rocket"
 						placeholder="Ex: 1"
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor="crew">Crew:</label>
+					<label htmlFor="crew">
+						{t("components.form.add.labels.crew")}:
+					</label>
 					<input
 						id="crew"
 						placeholder="Ex: 3"
@@ -74,7 +88,7 @@ export const LaunchAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 					/>
 				</div>
 				<button className="btn" type="submit">
-					<h4>Add</h4>
+					<h4>{t("components.buttons.add")}</h4>
 				</button>
 			</form>
 		</>

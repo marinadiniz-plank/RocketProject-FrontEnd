@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./LaunchData";
 
@@ -11,6 +12,7 @@ export const LaunchEditForm: React.FC<FormProps> = ({
 	initialData,
 	onSubmit,
 }) => {
+	const { t } = useTranslation();
 	const [formData, setFormData] = useState<Data>(initialData);
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,38 +30,48 @@ export const LaunchEditForm: React.FC<FormProps> = ({
 
 	return (
 		<>
-			<h5 className="form-h5">Please, give a new name for this launch</h5>
+			<h5 className="form-h5">{t("components.form.edit.salute")}</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
-					<label htmlFor={"launchCode"}>Launch Code:</label>
+					<label htmlFor={"launchCode"}>
+						{t("components.form.add.labels.launchCode")}:
+					</label>
 					<input
 						id={"launchCode"}
 						value={formData.launchCode}
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor={"date"}>Date:</label>
+					<label htmlFor={"date"}>
+						{t("components.form.add.labels.date")}:
+					</label>
 					<input
 						id={"date"}
 						value={new Date(formData.date).toLocaleDateString()}
 						type="date"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor={"success"}>Success:</label>
+					<label htmlFor={"success"}>
+						{t("components.form.add.labels.success")}:
+					</label>
 					<input
 						id={"success"}
 						value={formData.success.toString()}
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor={"rocket"}>Rocket:</label>
+					<label htmlFor={"rocket"}>
+						{t("components.form.add.labels.rocket")}:
+					</label>
 					<input
 						id={"rocket"}
 						value={formData.rocket.id}
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor={"crew"}>Crew:</label>
+					<label htmlFor={"crew"}>
+						{t("components.form.add.labels.crew")}:
+					</label>
 					<input
 						id={"crew"}
 						value={formData.crew.id}
@@ -69,7 +81,7 @@ export const LaunchEditForm: React.FC<FormProps> = ({
 				</div>
 
 				<button className="btn" type="submit">
-					<h4>Update</h4>
+					<h4>{t("components.buttons.edit")}</h4>
 				</button>
 			</form>
 		</>

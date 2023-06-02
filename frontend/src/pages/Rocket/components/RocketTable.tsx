@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/table.css";
 import UpdateButton from "../../../components/Buttons/UpdateButton";
 import { RocketEditForm } from "./RocketEditForm";
@@ -19,6 +20,7 @@ const RocketTable: React.FC<RocketTableModal> = ({
 	updateRocket,
 	deleteRocket,
 }) => {
+	const { t } = useTranslation();
 	const handleUpdateRocket = (id: number, formData: Data) => {
 		updateRocket(id, formData);
 	};
@@ -34,9 +36,9 @@ const RocketTable: React.FC<RocketTableModal> = ({
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Name</th>
-							<th className="edit">Editar</th>
-							<th className="delete">Excluir</th>
+							<th>{t("components.table.name")}</th>
+							<th className="edit">{t("components.table.edit")}</th>
+							<th className="delete">{t("components.table.delete")}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -45,7 +47,7 @@ const RocketTable: React.FC<RocketTableModal> = ({
 								<td>{item.id}</td>
 								<td>{item.name}</td>
 								<td className="edit_col">
-									<UpdateButton title={"Rocket"}>
+									<UpdateButton title={t("pages.rocket")}>
 										<RocketEditForm
 											formLabels={Object.keys(item)}
 											initialData={item}

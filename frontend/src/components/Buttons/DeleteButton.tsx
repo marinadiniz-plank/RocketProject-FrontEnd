@@ -12,7 +12,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ id, deleteRocket }) => {
 	};
 
 	return (
-		<button className="del_btn" onClick={handleDeleteRocket}>
+		<button type="button" className="del_btn" onClick={handleDeleteRocket}>
 			<i className="fa fa-delete-left"></i>
 		</button>
 	);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./RocketData";
 
@@ -8,7 +9,7 @@ export type FormProps = {
 
 export const RocketAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 	const [formData, setFormData] = useState<Data>({ id: 0, name: "" });
-
+	const { t } = useTranslation();
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { id, value } = event.target;
 		setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -21,10 +22,15 @@ export const RocketAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 
 	return (
 		<>
-			<h5 className="form-h5">Please, provide a name for this new rocket</h5>
+			<h5 className="form-h5">
+				{t("components.form.add.salute")}
+				{t("components.form.add.entities.rocket")}
+			</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
-					<label htmlFor="name">Name:</label>
+					<label htmlFor="name">
+						{t("components.form.add.labels.name")}:
+					</label>
 					<input
 						id="name"
 						placeholder="name"
@@ -34,7 +40,7 @@ export const RocketAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 					/>
 				</div>
 				<button className="btn" type="submit">
-					<h4>Add</h4>
+					<h4>{t("components.buttons.add")}</h4>
 				</button>
 			</form>
 		</>

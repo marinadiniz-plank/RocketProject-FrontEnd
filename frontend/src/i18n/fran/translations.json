@@ -1,0 +1,63 @@
+{
+	"translation": {
+		"pages": {
+			"rocket": "Fusée",
+			"crewman": "Homme d'équipage",
+			"crew": "Fusée",
+			"launch": "Lancement"
+		},
+		"components": {
+			"nav": {
+				"home": "Home",
+				"rocket": "Fusée",
+				"crewman": "Homme d'équipage",
+				"crew": "Équipage",
+				"launch": "Lancement"
+			},
+			"buttons": {
+				"add": "ajouter",
+				"edit": "modifier",
+				"delete": "supprimer"
+			},
+			"table": {
+				"name": "nom",
+				"edit": "modifier",
+				"delete": "supprimer",
+				"patent": "brevet",
+				"crewmans": "hommes d'équipage",
+				"launchCode": "code de lancement",
+				"date": "date",
+				"success": "succès",
+				"rocket": "fusée",
+				"crew": "équipage"
+			},
+			"modal": {},
+			"form": {
+				"add": {
+					"salute": "Veuillez fournir un nom pour ce nouvel ",
+					"entities": {
+						"rocket": "fusée",
+						"crewman": "homme d'équipage",
+						"crew": "équipage",
+						"launch": "lancement"
+					},
+					"labels": {
+						"name": "Nom",
+						"edit": "Modifier",
+						"delete": "Supprimer",
+						"patent": "Brevet",
+						"crewmans": "Hommes d'équipage",
+						"launchCode": "Code de lancement",
+						"date": "Date",
+						"success": "Succès",
+						"rocket": "Fusée",
+						"crew": "Équipage"
+					}
+				},
+				"edit": {
+					"salute": "veuillez remplir les données que vous souhaitez mettre à jour "
+				}
+			}
+		}
+	}
+}

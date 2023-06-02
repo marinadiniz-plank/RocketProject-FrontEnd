@@ -7,7 +7,7 @@ describe("Navbar", () => {
 
     it('should toggle the sidebar when clicking the navbar button', () => {
         cy.get('#navbar_btn').click();
-        cy.get('.sidebar').should('have.css', 'width', '200px');
+        cy.get('.sidebar').should('have.css', 'width', '230px');
 
         cy.get('#navbar_btn').click();
         cy.get('.sidebar').should('have.css', 'width', '75px');

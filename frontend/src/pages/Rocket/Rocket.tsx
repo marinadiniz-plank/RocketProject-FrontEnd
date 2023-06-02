@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
 import Header from "../../components/Header";
@@ -11,6 +12,7 @@ import RocketTable from "./components/RocketTable";
 function Rocket() {
 	const [data, { getRockets, addRocket, updateRocket, deleteRocket }] =
 		useRocket();
+	const { t } = useTranslation();
 	useEffect(() => {
 		getRockets();
 	}, []);
@@ -21,8 +23,8 @@ function Rocket() {
 
 	return (
 		<>
-			<Header pageTitle="Rocket" />
-			<AddButton title={"Rocket"}>
+			<Header pageTitle={t("pages.rocket")} />
+			<AddButton title={t("pages.rocket")}>
 				<RocketAddForm onSubmit={handleAddRocket} />
 			</AddButton>
 			<div>

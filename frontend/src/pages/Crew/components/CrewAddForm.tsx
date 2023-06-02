@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./CrewData";
 
@@ -13,6 +14,8 @@ export const CrewAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 		crewman: [],
 	});
 
+	const { t } = useTranslation();
+
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { id, value } = event.target;
 		setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -26,17 +29,24 @@ export const CrewAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 
 	return (
 		<>
-			<h5 className="form-h5">Please, provide a name for this new crew</h5>
+			<h5 className="form-h5">
+				{t("components.form.add.salute")}
+				{t("components.form.add.entities.crew")}
+			</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
-					<label htmlFor="name">Name:</label>
+					<label htmlFor="name">
+						{t("components.form.add.labels.name")}:
+					</label>
 					<input
 						id="name"
 						placeholder="name"
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor="crewman">Crewmans:</label>
+					<label htmlFor="crewman">
+						{t("components.form.add.labels.crewmans")}:
+					</label>
 					<input
 						id="crewman"
 						placeholder="Ex: 1, 2, 3"
@@ -45,7 +55,7 @@ export const CrewAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 					/>
 				</div>
 				<button className="btn" type="submit">
-					<h4>Add</h4>
+					<h4>{t("components.buttons.add")}</h4>
 				</button>
 			</form>
 		</>

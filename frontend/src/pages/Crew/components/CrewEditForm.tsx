@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./CrewData";
 
@@ -11,6 +12,8 @@ export const CrewEditForm: React.FC<FormProps> = ({
 	initialData,
 	onSubmit,
 }) => {
+	const { t } = useTranslation();
+
 	const [formData, setFormData] = useState<Data>(initialData);
 	const [crewman, setCrewman] = useState<string>(
 		initialData.crewman.map((crew) => crew.id).join(", ")
@@ -35,17 +38,21 @@ export const CrewEditForm: React.FC<FormProps> = ({
 
 	return (
 		<>
-			<h5 className="form-h5">Please, give a new name for this crew</h5>
+			<h5 className="form-h5">{t("components.form.edit.salute")}</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
-					<label htmlFor={"name"}>Name:</label>
+					<label htmlFor={"name"}>
+						{t("components.form.add.labels.name")}:
+					</label>
 					<input
 						id={"name"}
 						value={formData.name}
 						type="text"
 						onChange={handleInputChange}
 					/>
-					<label htmlFor={"crewman"}>Crewmans:</label>
+					<label htmlFor={"crewman"}>
+						{t("components.form.add.labels.crewmans")}:
+					</label>
 					<input
 						id={"crewman"}
 						value={crewman}
@@ -55,7 +62,7 @@ export const CrewEditForm: React.FC<FormProps> = ({
 				</div>
 
 				<button className="btn" type="submit">
-					<h4>Update</h4>
+					<h4>{t("components.buttons.edit")}</h4>
 				</button>
 			</form>
 		</>

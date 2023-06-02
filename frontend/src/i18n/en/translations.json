@@ -1,0 +1,63 @@
+{
+	"translation": {
+		"pages": {
+			"rocket": "Rocket",
+			"crewman": "Crewman",
+			"crew": "Crew",
+			"launch": "Launch"
+		},
+		"components": {
+			"nav": {
+				"home": "Home",
+				"rocket": "Rocket",
+				"crewman": "Crewman",
+				"crew": "Crew",
+				"launch": "Launch"
+			},
+			"buttons": {
+				"add": "add",
+				"edit": "edit",
+				"delete": "delete"
+			},
+			"table": {
+				"name": "name",
+				"edit": "edit",
+				"delete": "delete",
+				"patent": "patent",
+				"crewmans": "crewmans",
+				"launchCode": "launchCode",
+				"date": "date",
+				"success": "success",
+				"rocket": "rocket",
+				"crew": "crew"
+			},
+			"modal": {},
+			"form": {
+				"add": {
+					"salute": "Please provide a name for this new ",
+					"entities": {
+						"rocket": "rocket",
+						"crewman": "crewman",
+						"crew": "crew",
+						"launch": "launch"
+					},
+					"labels": {
+						"name": "Name",
+						"edit": "Edit",
+						"delete": "Delete",
+						"patent": "Patent",
+						"crewmans": "Crewmans",
+						"launchCode": "LaunchCode",
+						"date": "Date",
+						"success": "Success",
+						"rocket": "Rocket",
+						"crew": "Crew"
+					}
+				},
+				"edit": {
+					"salute": "Please fill in the data you want to update"
+				}
+			}
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/table.css";
 import UpdateButton from "../../../components/Buttons/UpdateButton";
 import { Data } from "./CrewData";
@@ -15,6 +16,7 @@ export const CrewTable: React.FC<CrewTableModal> = ({
 	updateCrew,
 	deleteCrew,
 }) => {
+	const { t } = useTranslation();
 	const handleUpdateCrew = (id: number, formData: Data) => {
 		updateCrew(id, formData);
 	};
@@ -30,10 +32,10 @@ export const CrewTable: React.FC<CrewTableModal> = ({
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Name</th>
-							<th>Crewmans</th>
-							<th className="edit">Editar</th>
-							<th className="delete">Excluir</th>
+							<th>{t("components.table.name")}</th>
+							<th>{t("components.table.crewmans")}</th>
+							<th className="edit">{t("components.table.edit")}</th>
+							<th className="delete">{t("components.table.delete")}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,7 +49,7 @@ export const CrewTable: React.FC<CrewTableModal> = ({
 										.join(", ")}
 								</td>
 								<td className="edit_col">
-									<UpdateButton title={"Crew"}>
+									<UpdateButton title={t("pages.crew")}>
 										<CrewEditForm
 											initialData={item}
 											onSubmit={handleUpdateCrew}

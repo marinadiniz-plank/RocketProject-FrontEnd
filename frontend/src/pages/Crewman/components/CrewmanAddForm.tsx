@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./CrewmanData";
 
@@ -12,7 +13,7 @@ export const CrewmanAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 		name: "",
 		patent: "",
 	});
-
+	const { t } = useTranslation();
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { id, value } = event.target;
 		setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -26,11 +27,14 @@ export const CrewmanAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 	return (
 		<>
 			<h5 className="form-h5">
-				Please, provide a name for this new crewman
+				{t("components.form.add.salute")}
+				{t("components.form.add.entities.crewman")}
 			</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				<div className="form-field">
-					<label htmlFor="name">Name:</label>
+					<label htmlFor="name">
+						{t("components.form.add.labels.name")}:
+					</label>
 					<input
 						id="name"
 						placeholder="name"
@@ -38,7 +42,9 @@ export const CrewmanAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 						value={formData.name}
 						onChange={handleInputChange}
 					/>
-					<label htmlFor="patent">Patent:</label>
+					<label htmlFor="patent">
+						{t("components.form.add.labels.patent")}:
+					</label>
 					<input
 						id="patent"
 						placeholder="patent"
@@ -48,7 +54,7 @@ export const CrewmanAddForm: React.FC<FormProps> = ({ onSubmit }) => {
 					/>
 				</div>
 				<button className="btn" type="submit">
-					<h4>Add</h4>
+					<h4>{t("components.buttons.add")}</h4>
 				</button>
 			</form>
 		</>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/form.css";
 import { Data } from "./RocketData";
 
@@ -13,6 +14,7 @@ export const RocketEditForm: React.FC<FormProps> = ({
 	initialData,
 	onSubmit,
 }) => {
+	const { t } = useTranslation();
 	const [formData, setFormData] = useState<Data>(initialData);
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +32,7 @@ export const RocketEditForm: React.FC<FormProps> = ({
 
 	return (
 		<>
-			<h5 className="form-h5">Please, give a new name for this rocket</h5>
+			<h5 className="form-h5">{t("components.form.edit.salute")}</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
 				{formLabels.map((item) => {
 					if (item === "id") return null;
@@ -47,7 +49,7 @@ export const RocketEditForm: React.FC<FormProps> = ({
 					);
 				})}
 				<button className="btn" type="submit">
-					<h4>Update</h4>
+					<h4>{t("components.buttons.edit")}</h4>
 				</button>
 			</form>
 		</>
