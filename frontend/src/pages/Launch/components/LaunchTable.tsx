@@ -5,13 +5,13 @@ import UpdateButton from "../../../components/Buttons/UpdateButton";
 import { Data } from "./LaunchData";
 import { LaunchEditForm } from "./LaunchEditForm";
 
-type LaunchTableModal = {
+export type LaunchTableProps = {
     data: Data[];
     updateLaunch: (id: number, Launch: Partial<Data>) => Promise<void>;
     deleteLaunch: (id: number) => Promise<void>;
 };
 
-export const LaunchTable: React.FC<LaunchTableModal> = ({
+export const LaunchTable: React.FC<LaunchTableProps> = ({
     data,
     updateLaunch,
     deleteLaunch,

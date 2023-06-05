@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import "../../assets/CSS/buttons.css";
 import { Modal } from "../Modal/Modal";
 
-type EditProps = {
+export type EditProps = {
 	title: string;
 	children: ReactNode;
 };

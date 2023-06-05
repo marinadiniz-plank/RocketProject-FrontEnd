@@ -9,13 +9,13 @@ type Data = {
 	name: string;
 };
 
-type RocketTableModal = {
+export type RocketTableProps = {
 	data: Data[];
 	updateRocket: (id: number, rocket: Partial<Data>) => Promise<void>;
 	deleteRocket: (id: number) => Promise<void>;
 };
 
-const RocketTable: React.FC<RocketTableModal> = ({
+const RocketTable: React.FC<RocketTableProps> = ({
 	data,
 	updateRocket,
 	deleteRocket,
@@ -49,7 +49,6 @@ const RocketTable: React.FC<RocketTableModal> = ({
 								<td className="edit_col">
 									<UpdateButton title={t("pages.rocket")}>
 										<RocketEditForm
-											formLabels={Object.keys(item)}
 											initialData={item}
 											onSubmit={handleUpdateRocket}
 										/>

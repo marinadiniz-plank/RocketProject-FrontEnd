@@ -4,13 +4,11 @@ import "../../../assets/CSS/form.css";
 import { Data } from "./CrewmanData";
 
 export type FormProps = {
-	formLabels: string[];
 	initialData: Data;
 	onSubmit: (id: number, formData: Data) => void;
 };
 
 export const CrewmanEditForm: React.FC<FormProps> = ({
-	formLabels,
 	initialData,
 	onSubmit,
 }) => {
@@ -31,20 +29,26 @@ export const CrewmanEditForm: React.FC<FormProps> = ({
 		<>
 			<h5 className="form-h5">{t("components.form.edit.salute")}</h5>
 			<form className="form" onSubmit={handleFormSubmit}>
-				{formLabels.map((item) => {
-					if (item === "id") return null; // Exclude 'id' field from rendering
-					return (
-						<div key={item} className="form-field">
-							<label htmlFor={item}>{item}</label>
-							<input
-								id={item}
-								value={formData[item as keyof Data]}
-								type="text"
-								onChange={handleInputChange}
-							/>
-						</div>
-					);
-				})}
+				<div className="form-field">
+					<label htmlFor={"name"}>
+						{t("components.form.add.labels.name")}:
+					</label>
+					<input
+						id={"name"}
+						value={formData.name}
+						type="text"
+						onChange={handleInputChange}
+					/>
+					<label htmlFor={"patent"}>
+						{t("components.form.add.labels.patent")}:
+					</label>
+					<input
+						id={"patent"}
+						value={formData.patent}
+						type="text"
+						onChange={handleInputChange}
+					/>
+				</div>
 				<button className="btn" type="submit">
 					<h4>{t("components.buttons.edit")}</h4>
 				</button>

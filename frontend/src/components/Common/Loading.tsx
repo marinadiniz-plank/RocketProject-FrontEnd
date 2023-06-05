@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../assets/CSS/table.css";
+import "../../assets/CSS/table.css";
 
 export function Loading() {
 	const [isLoading, setIsLoading] = useState(true);

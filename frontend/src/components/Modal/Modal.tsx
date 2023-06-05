@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import "../../assets/CSS/modal.css";
 
-type ModalProps = {
+export type ModalProps = {
 	isOpen: boolean;
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	title: string;

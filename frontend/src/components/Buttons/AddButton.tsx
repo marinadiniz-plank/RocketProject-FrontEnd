@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import "../../assets/CSS/buttons.css";
 import { Modal } from "../Modal/Modal";
 
-type AddButtonProps = {
+export type AddButtonProps = {
 	title: string;
 	children: ReactNode;
 };

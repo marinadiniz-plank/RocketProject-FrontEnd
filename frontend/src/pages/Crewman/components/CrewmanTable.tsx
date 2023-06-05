@@ -5,13 +5,13 @@ import UpdateButton from "../../../components/Buttons/UpdateButton";
 import { Data } from "./CrewmanData";
 import { CrewmanEditForm } from "./CrewmanEditForm";
 
-type CrewmanTableModal = {
+export type CrewmanTableProps = {
 	data: Data[];
 	updateCrewman: (id: number, crewman: Partial<Data>) => Promise<void>;
 	deleteCrewman: (id: number) => Promise<void>;
 };
 
-const CrewmanTable: React.FC<CrewmanTableModal> = ({
+const CrewmanTable: React.FC<CrewmanTableProps> = ({
 	data,
 	updateCrewman,
 	deleteCrewman,
@@ -25,18 +25,21 @@ const CrewmanTable: React.FC<CrewmanTableModal> = ({
 		deleteCrewman(id);
 	};
 
+	const columns = (
+		<>
+			<th>Id</th>
+			<th>{t("components.table.name")}</th>
+			<th>{t("components.table.patent")}</th>
+			<th className="edit">{t("components.table.edit")}</th>
+			<th className="delete">{t("components.table.delete")}</th>
+		</>
+	);
 	return (
 		<div className="data-div">
 			<div className="divTable">
 				<table>
 					<thead>
-						<tr>
-							<th>Id</th>
-							<th>{t("components.table.name")}</th>
-							<th>{t("components.table.patent")}</th>
-							<th className="edit">{t("components.table.edit")}</th>
-							<th className="delete">{t("components.table.delete")}</th>
-						</tr>
+						<tr></tr>
 					</thead>
 					<tbody>
 						{data.map((item: Data) => (
@@ -47,7 +50,6 @@ const CrewmanTable: React.FC<CrewmanTableModal> = ({
 								<td className="edit_col">
 									<UpdateButton title={t("pages.crewman")}>
 										<CrewmanEditForm
-											formLabels={Object.keys(item)}
 											initialData={item}
 											onSubmit={handleUpdateCrewman}
 										/>

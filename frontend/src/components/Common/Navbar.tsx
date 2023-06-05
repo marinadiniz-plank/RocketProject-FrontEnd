@@ -1,9 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import "../assets/CSS/nav.css";
+import "../../assets/CSS/nav.css";
+import {
+	bars,
+	crew,
+	crewman,
+	home,
+	launch,
+	rocket,
+} from "../../assets/svgImages/exportSVG";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
 	const { t } = useTranslation();
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -13,35 +21,35 @@ const Navbar = () => {
 		<div className="nav">
 			<div style={{ width: isOpen ? "230px" : "75px" }} className="sidebar">
 				<div className="top_section">
-					<i className="fas fa-bars" id="navbar_btn" onClick={toggle} />
+					<img src={bars} id="navbar_btn" onClick={toggle} />
 				</div>
-				<div className="content">
-					<Link to="/">
-						<i className="fas fa-home"></i>
+				<div className={`content ${isOpen ? "content-open" : ""}`}>
+					<Link to="/" className="nav-link">
+						<img src={home} className="icons" />
 						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
 							{t("components.nav.home")}
 						</span>
 					</Link>
-					<Link to="/Rocket">
-						<i className="fas fa-light fa-rocket"></i>
+					<Link to="/Rocket" className="nav-link">
+						<img src={rocket} className="icons" />
 						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
 							{t("components.nav.rocket")}
 						</span>
 					</Link>
-					<Link to="/Crewman">
-						<i className="fas fa-light fa-user"></i>
+					<Link to="/Crewman" className="nav-link">
+						<img src={crewman} className="icons" />
 						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
 							{t("components.nav.crewman")}
 						</span>
 					</Link>
-					<Link to="/Crew">
-						<i className="fas fa-light fa-users"></i>
+					<Link to="/Crew" className="nav-link">
+						<img src={crew} className="icons" />
 						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
 							{t("components.nav.crew")}
 						</span>
 					</Link>
-					<Link to="/Launch">
-						<i className="fas fa-light fa-play"></i>
+					<Link to="/Launch" className="nav-link">
+						<img src={launch} className="icons" />
 						<span style={{ visibility: isOpen ? "visible" : "hidden" }}>
 							{t("components.nav.launch")}
 						</span>
@@ -51,4 +59,5 @@ const Navbar = () => {
 		</div>
 	);
 };
+
 export default Navbar;

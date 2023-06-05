@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
-import Header from "../../components/Header";
-import { Loading } from "../../components/Loading";
+
+import { Loading } from "../../components/Common/Loading";
 import { useLaunch } from "../../hooks/useLaunch";
 import { LaunchAddForm } from "./components/LaunchAddForm";
 import { Data } from "./components/LaunchData";
@@ -24,7 +23,6 @@ function Launch() {
 
 	return (
 		<>
-			<Header pageTitle={t("pages.launch")} />
 			<AddButton title={t("pages.launch")}>
 				<LaunchAddForm onSubmit={handleAddLaunch} />
 			</AddButton>
@@ -39,7 +37,6 @@ function Launch() {
 					<Loading />
 				)}
 			</div>
-			<Outlet />
 		</>
 	);
 }

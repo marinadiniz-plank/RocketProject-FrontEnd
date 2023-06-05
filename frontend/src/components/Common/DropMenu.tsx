@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { useTranslation } from "react-i18next";
-import '../assets/CSS/dropMenu.css';
+import '../../assets/CSS/dropMenu.css';
 export function LanguageSelector() {
     const { i18n } = useTranslation();
 

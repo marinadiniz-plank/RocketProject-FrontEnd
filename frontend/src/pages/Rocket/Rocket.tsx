@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
-import Header from "../../components/Header";
-import { Loading } from "../../components/Loading";
+import { Loading } from "../../components/Common/Loading";
 import { useRocket } from "../../hooks/useRockets";
 import { RocketAddForm } from "./components/RocketAddForm";
 import { Data } from "./components/RocketData";
@@ -23,7 +21,6 @@ function Rocket() {
 
 	return (
 		<>
-			<Header pageTitle={t("pages.rocket")} />
 			<AddButton title={t("pages.rocket")}>
 				<RocketAddForm onSubmit={handleAddRocket} />
 			</AddButton>
@@ -38,7 +35,6 @@ function Rocket() {
 					<Loading />
 				)}
 			</div>
-			<Outlet />
 		</>
 	);
 }

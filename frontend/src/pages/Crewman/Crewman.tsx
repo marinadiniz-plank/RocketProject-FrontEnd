@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Outlet } from "react-router-dom";
 import AddButton from "../../components/Buttons/AddButton";
-import Header from "../../components/Header";
-import { Loading } from "../../components/Loading";
+
+import { Loading } from "../../components/Common/Loading";
 import { useCrewman } from "../../hooks/useCrewmans";
 import { CrewmanAddForm } from "./components/CrewmanAddForm";
 import { Data } from "./components/CrewmanData";
@@ -24,7 +23,6 @@ function Crewman() {
 
 	return (
 		<>
-			<Header pageTitle={t("pages.crewman")} />
 			<AddButton title={t("pages.crewman")}>
 				<CrewmanAddForm onSubmit={handleAddCrewman} />
 			</AddButton>
@@ -39,7 +37,6 @@ function Crewman() {
 					<Loading />
 				)}
 			</div>
-			<Outlet />
 		</>
 	);
 }

@@ -1,9 +1,8 @@
-import "../assets/CSS/main.css";
-import "../assets/CSS/nav.css";
+import React from "react";
 import { LanguageSelector } from "./DropMenu";
 import Navbar from "./Navbar";
 
-type HeaderProps = {
+export type HeaderProps = {
 	pageTitle: string;
 };
 
