@@ -1,12 +1,13 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
-  projectId: 'hztvv2',
+  projectId: "hztvv2",
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "http://localhost:5173/",
+    baseUrl:
+      "https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/",
   },
 
   component: {
