@@ -1,5 +1,18 @@
 /* eslint-disable prettier/prettier */
-/// <reference types="cypress"/>
+import { v4 as uuidv4 } from 'uuid';
+import '../support/e2e';
+
+const createdCrew = {
+    name: uuidv4(),
+    crewmans: "2, 3, 4"
+};
+
+const updatedCrew = {
+    name: createdCrew.name,
+    crewmans: "2, 4"
+};
+
+
 describe("Crew page", () => {
     beforeEach(() => {
         cy.visit("/");
@@ -14,15 +27,15 @@ describe("Crew page", () => {
         cy.get(".modal").should("exist");
         cy.get(".form").should("exist");
 
-        cy.get('input[id="name"]').type("Crew test");
-        cy.get('input[id="crewman"]').type("1, 2");
+        cy.get('input[id="name"]').type(createdCrew.name);
+        cy.get('input[id="crewman"]').type(createdCrew.crewmans);
         cy.get(".btn").click();
 
         cy.get(".close").should("exist").click();
 
         cy.get(".divTable").should("exist");
 
-        cy.get(".divTable td").should("contain", "Crew test");
+        cy.get(".divTable td").should("contain", createdCrew.name);
     });
 
     it("should navigate into the crew page and update a new crew", () => {
@@ -32,13 +45,13 @@ describe("Crew page", () => {
 
         cy.get('.divTable').should('exist');
 
-        cy.contains("td", "Crew test")
+        cy.contains("td", createdCrew.name)
             .parent("tr")
             .within(() => {
                 cy.get(".edit_btn").click();
             });
 
-        cy.get('input[id="crewman"]').clear().type("1");
+        cy.get('input[id="crewman"]').clear().type(updatedCrew.crewmans);
 
         cy.get(".btn").click();
 
@@ -46,7 +59,7 @@ describe("Crew page", () => {
 
         cy.get(".divTable").should("exist");
 
-        cy.get(".divTable td").should("contain", "Crew test");
+        cy.get(".divTable td").should("contain", updatedCrew.name);
     });
 
     it('should navigate into the crew page and delete an existing crew', () => {
@@ -56,13 +69,13 @@ describe("Crew page", () => {
 
         cy.get('.divTable').should('exist');
 
-        cy.contains("td", "Crew test")
+        cy.contains("td", updatedCrew.name)
             .parent("tr")
             .within(() => {
                 cy.get(".del_btn").click();
             });
 
-        cy.get(".divTable").should("not.contain", "Crew test");
+        cy.get(".divTable").should("not.contain", updatedCrew.name);
 
 
     });

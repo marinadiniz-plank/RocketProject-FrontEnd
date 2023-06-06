@@ -8,7 +8,7 @@ const createdCrewman = {
 };
 
 const updatedCrewman = {
-    name: uuidv4(),
+    name: createdCrewman.name,
     patent: "Crewman"
 };
 
@@ -46,7 +46,7 @@ describe("Crewman page", () => {
 
         cy.get('.divTable').should('exist');
 
-        cy.contains("td", 'Fulano')
+        cy.contains("td", updatedCrewman.name)
             .parent("tr")
             .within(() => {
                 cy.get(".edit_btn").click();
