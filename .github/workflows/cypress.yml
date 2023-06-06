@@ -13,7 +13,7 @@ jobs:
               node-version: 14
 
          - name: Install dependencies
-           run: npm ci
+           run: npm i
 
          - name: Cypress run
            run: npm run cypress:run -- --env baseUrl="https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/" --spec "src/components/stories/**/*.spec.js"
