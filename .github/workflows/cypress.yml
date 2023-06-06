@@ -16,4 +16,4 @@ jobs:
            run: npm i
 
          - name: Cypress run
-           run: npm run cypress:run -- --env baseUrl="https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/" --spec "src/components/stories/**/*.spec.js"
+           run: npm run cypress:run -- --env baseUrl="https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/" --spec "src/components/stories/**/*.stories.tsx"
