@@ -15,5 +15,5 @@ jobs:
          - name: Install dependencies
            run: npm i
 
-        - name: Cypress run
-          run: npm run cypress:run -- --env baseUrl="https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/" --spec "cypress/e2e/**/*.cy.tsx"
+         - name: Cypress run
+           run: npm run cypress:run -- --env baseUrl="https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/" --spec "cypress/e2e/**/*.spec.js"
