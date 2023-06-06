@@ -29,47 +29,47 @@ const RocketTable: React.FC<RocketTableProps> = ({
 		deleteRocket(id);
 	};
 
+	const columns = (
+		<>
+			<th>Id</th>
+			<th>{t("components.table.name")}</th>
+			<th className="edit">{t("components.table.edit")}</th>
+			<th className="delete">{t("components.table.delete")}</th>
+		</>
+	);
+
+	const rows = data.map((item: Data) => (
+		<tr key={item.id}>
+			<td>{item.id}</td>
+			<td>{item.name}</td>
+			<td className="edit_col">
+				<UpdateButton title={t("pages.rocket")}>
+					<RocketEditForm
+						initialData={item}
+						onSubmit={handleUpdateRocket}
+					/>
+				</UpdateButton>
+			</td>
+			<td className="del_col">
+				{/* {React.Children.toArray(children)[1]} */}
+				<a
+					href="#"
+					className="del_btn"
+					onClick={() => handleDeleteRocket(item.id)}
+				>
+					<i className="fa fa-delete-left"></i>
+				</a>
+			</td>
+		</tr>
+	));
+
 	return (
-		<div className="data-div">
-			<div className="divTable">
-				<table>
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>{t("components.table.name")}</th>
-							<th className="edit">{t("components.table.edit")}</th>
-							<th className="delete">{t("components.table.delete")}</th>
-						</tr>
-					</thead>
-					<tbody>
-						{data.map((item: Data) => (
-							<tr key={item.id}>
-								<td>{item.id}</td>
-								<td>{item.name}</td>
-								<td className="edit_col">
-									<UpdateButton title={t("pages.rocket")}>
-										<RocketEditForm
-											initialData={item}
-											onSubmit={handleUpdateRocket}
-										/>
-									</UpdateButton>
-								</td>
-								<td className="del_col">
-									{/* {React.Children.toArray(children)[1]} */}
-									<a
-										href="#"
-										className="del_btn"
-										onClick={() => handleDeleteRocket(item.id)}
-									>
-										<i className="fa fa-delete-left"></i>
-									</a>
-								</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<>
+			<thead>
+				<tr>{columns}</tr>
+			</thead>
+			<tbody>{rows}</tbody>
+		</>
 	);
 };
 

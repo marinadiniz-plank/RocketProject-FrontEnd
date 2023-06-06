@@ -34,43 +34,38 @@ const CrewmanTable: React.FC<CrewmanTableProps> = ({
 			<th className="delete">{t("components.table.delete")}</th>
 		</>
 	);
+
+	const rows = data.map((item: Data) => (
+		<tr key={item.id}>
+			<td>{item.id}</td>
+			<td>{item.name}</td>
+			<td>{item.patent}</td>
+			<td className="edit_col">
+				<UpdateButton title={t("pages.crewman")}>
+					<CrewmanEditForm
+						initialData={item}
+						onSubmit={handleUpdateCrewman}
+					/>
+				</UpdateButton>
+			</td>
+			<td className="del_col">
+				<button
+					type="button"
+					className="del_btn"
+					onClick={() => handleDeleteCrewman(item.id)}
+				>
+					<i className="fa fa-delete-left"></i>
+				</button>
+			</td>
+		</tr>
+	));
 	return (
-		<div className="data-div">
-			<div className="divTable">
-				<table>
-					<thead>
-						<tr></tr>
-					</thead>
-					<tbody>
-						{data.map((item: Data) => (
-							<tr key={item.id}>
-								<td>{item.id}</td>
-								<td>{item.name}</td>
-								<td>{item.patent}</td>
-								<td className="edit_col">
-									<UpdateButton title={t("pages.crewman")}>
-										<CrewmanEditForm
-											initialData={item}
-											onSubmit={handleUpdateCrewman}
-										/>
-									</UpdateButton>
-								</td>
-								<td className="del_col">
-									{/* {React.Children.toArray(children)[1]} */}
-									<button
-										type="button"
-										className="del_btn"
-										onClick={() => handleDeleteCrewman(item.id)}
-									>
-										<i className="fa fa-delete-left"></i>
-									</button>
-								</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<>
+			<thead>
+				<tr>{columns}</tr>
+			</thead>
+			<tbody>{rows}</tbody>
+		</>
 	);
 };
 

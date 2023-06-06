@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "../../../assets/CSS/table.css";
 import UpdateButton from "../../../components/Buttons/UpdateButton";
-import GenericTable from "../../../components/Table";
 import { Data } from "./CrewData";
 import { CrewEditForm } from "./CrewEditForm";
 
@@ -58,5 +57,12 @@ export const CrewTable: React.FC<CrewTableProps> = ({
 		</tr>
 	));
 
-	return <GenericTable columns={columns} rows={rows} />;
+	return (
+		<>
+			<thead>
+				<tr>{columns}</tr>
+			</thead>
+			<tbody>{rows}</tbody>
+		</>
+	);
 };

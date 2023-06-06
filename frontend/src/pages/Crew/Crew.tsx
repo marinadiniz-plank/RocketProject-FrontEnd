@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import AddButton from "../../components/Buttons/AddButton";
 import { Loading } from "../../components/Common/Loading";
+import GenericTable from "../../components/Table";
 import { useCrew } from "../../hooks/useCrews";
 import { CrewAddForm } from "./components/CrewAddForm";
 import { Data } from "./components/CrewData";
@@ -26,11 +27,13 @@ function Crewman() {
 			</AddButton>
 			<div>
 				{data && data.length > 0 ? (
-					<CrewTable
-						data={data}
-						updateCrew={updateCrew}
-						deleteCrew={deleteCrew}
-					/>
+					<GenericTable>
+						<CrewTable
+							data={data}
+							updateCrew={updateCrew}
+							deleteCrew={deleteCrew}
+						/>
+					</GenericTable>
 				) : (
 					<Loading />
 				)}

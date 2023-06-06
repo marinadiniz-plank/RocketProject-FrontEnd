@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import AddButton from "../../components/Buttons/AddButton";
 import { Loading } from "../../components/Common/Loading";
+import GenericTable from "../../components/Table";
 import { useRocket } from "../../hooks/useRockets";
 import { RocketAddForm } from "./components/RocketAddForm";
 import { Data } from "./components/RocketData";
@@ -26,11 +27,13 @@ function Rocket() {
 			</AddButton>
 			<div>
 				{data && data.length > 0 ? (
-					<RocketTable
-						data={data}
-						updateRocket={updateRocket}
-						deleteRocket={deleteRocket}
-					/>
+					<GenericTable>
+						<RocketTable
+							data={data}
+							updateRocket={updateRocket}
+							deleteRocket={deleteRocket}
+						/>
+					</GenericTable>
 				) : (
 					<Loading />
 				)}

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import AddButton from "../../components/Buttons/AddButton";
 
 import { Loading } from "../../components/Common/Loading";
+import GenericTable from "../../components/Table";
 import { useLaunch } from "../../hooks/useLaunch";
 import { LaunchAddForm } from "./components/LaunchAddForm";
 import { Data } from "./components/LaunchData";
@@ -28,11 +29,13 @@ function Launch() {
 			</AddButton>
 			<div>
 				{data && data.length > 0 ? (
-					<LaunchTable
-						data={data}
-						updateLaunch={updateLaunch}
-						deleteLaunch={deleteLaunch}
-					/>
+					<GenericTable>
+						<LaunchTable
+							data={data}
+							updateLaunch={updateLaunch}
+							deleteLaunch={deleteLaunch}
+						/>
+					</GenericTable>
 				) : (
 					<Loading />
 				)}

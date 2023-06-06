@@ -2,25 +2,17 @@
 import React from "react";
 import "../assets/CSS/table.css";
 
-type TableProps = {
-    columns: React.ReactNode;
-    rows: React.ReactNode;
+export type TableProps = {
+    children: React.ReactNode;
 };
 
-const GenericTable: React.FC<TableProps> = ({ columns, rows }) => {
+const GenericTable: React.FC<TableProps> = ({ children }) => {
 
     return (
         <div className="data-div">
             <div className="divTable">
                 <table>
-                    <thead>
-                        <tr>
-                            {columns}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {rows}
-                    </tbody>
+                    {children}
                 </table>
             </div>
         </div>
