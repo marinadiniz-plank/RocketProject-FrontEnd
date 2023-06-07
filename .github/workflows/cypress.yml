@@ -16,4 +16,4 @@ jobs:
            run: npm i
 
          - name: Cypress run
-           run: npm run cypress:dev
+           run: npm run cypress:prod
