@@ -11,13 +11,13 @@
 		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"cypress:run": "cypress run"
+		"cypress:run": "cypress run",
+		"test": "jest"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.0",
 		"@emotion/styled": "^11.11.0",
 		"@mui/material": "^5.13.1",
-		"@types/jest": "^29.5.2",
 		"i18next": "^22.5.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
