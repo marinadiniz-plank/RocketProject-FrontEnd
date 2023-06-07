@@ -7,8 +7,7 @@ export default defineConfig({
 		setupNodeEvents(on, config) {
 			// implement node event listeners here
 		},
-		baseUrl:
-			"https://rocketproject-frontend-ad39sjyeb-marinadiniz-plank.vercel.app/",
+		baseUrl: "https://rocketproject-frontend-marinadiniz-plank.vercel.app/",
 	},
 
 	component: {
