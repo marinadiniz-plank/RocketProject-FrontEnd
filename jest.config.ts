@@ -8,7 +8,7 @@ export default {
 	testEnvironment: "jest-environment-jsdom",
 	transformIgnorePatterns: ["/node_modules/", "^.+\\.css$"],
 	moduleNameMapper: {
-		"\\.(css|less|scss)$":
+		"\\.(css|less|scss|svg)$":
 			"<rootDir>/src/components/__tests__/mocks/styleMock.ts",
 	},
 };
