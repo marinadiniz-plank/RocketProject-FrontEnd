@@ -12,13 +12,11 @@ jobs:
            with:
               node-version: 14
 
-        - name: Install dependencies
-          run: npm cache clean --force && rm -rf node_modules && npm install
+         - name: Install dependencies
+           run: npm cache clean --force && rm -rf node_modules && npm install
 
-        - name: Build production
-          run: npm run build
-         
-        - name: Cypress run
-          run: npm run cypress:dev
+         - name: Build production
+           run: npm run build
 
-
+         - name: Cypress run
+           run: npm run cypress:dev
