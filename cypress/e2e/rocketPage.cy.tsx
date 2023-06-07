@@ -27,7 +27,7 @@ describe("Rocket page", () => {
 		cy.get(".btn").click();
 
 		cy.get(".close").should("exist").click();
-
+		cy.wait("@rocketData");
 		cy.get(".divTable").should("exist");
 
 		cy.get(".divTable").should("contain", createdRocket.name);
@@ -37,7 +37,7 @@ describe("Rocket page", () => {
 		cy.get("#navbar_btn").click();
 		cy.get('a[href="/Rocket"]').click();
 		cy.url().should("include", "/Rocket");
-
+		cy.wait("@rocketData");
 		cy.get(".divTable").should("exist");
 
 		cy.contains("td", createdRocket.name)
@@ -68,7 +68,7 @@ describe("Rocket page", () => {
 		cy.get("#navbar_btn").click();
 		cy.get('a[href="/Rocket"]').click();
 		cy.url().should("include", "/Rocket");
-
+		cy.wait("@rocketData");
 		cy.get(".divTable").should("exist");
 
 		cy.contains("td", updatedRocket.name)
