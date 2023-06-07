@@ -9,7 +9,9 @@ export default defineConfig({
 		},
 		baseUrl: "https://rocketproject-frontend-marinadiniz-plank.vercel.app/",
 	},
-
+	requestTimeout: 60000,
+	responseTimeout: 60000,
+	defaultCommandTimeout: 60000,
 	component: {
 		devServer: {
 			framework: "react",

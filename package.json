@@ -11,7 +11,8 @@
 		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"cypress:run": "cypress run",
+		"cypress:dev": "concurrently --kill-others --success \"last\" \"vite\" \"cypress run\"",
+		"cypress:prod": "run -- --env baseUrl=\"https://rocketproject-frontend-marinadiniz-plank.vercel.app\" --spec \"cypress/e2e/**/*.cy.tsx\"",
 		"test": "jest"
 	},
 	"dependencies": {
@@ -47,6 +48,7 @@
 		"@typescript-eslint/parser": "^5.57.1",
 		"@vitejs/plugin-react": "^4.0.0",
 		"autoprefixer": "^10.4.2",
+		"concurrently": "^8.1.0",
 		"cypress": "^12.13.0",
 		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^8.8.0",
