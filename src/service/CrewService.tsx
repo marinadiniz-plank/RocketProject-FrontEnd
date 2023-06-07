@@ -29,13 +29,16 @@ export const SubmitCrew = async (formData: Partial<Data>) => {
 };
 
 export const UpdateCrew = async (id: number, formData: Partial<Data>) => {
-	const response = await fetch(`https://rocket-project.vercel.app/crew/${id}`, {
-		method: "PUT",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(formData),
-	});
+	const response = await fetch(
+		`https://rocket-project.vercel.app/crew/${id}`,
+		{
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(formData),
+		}
+	);
 
 	if (!response.ok) {
 		throw new Error("Error in request"); // call notification
@@ -45,12 +48,15 @@ export const UpdateCrew = async (id: number, formData: Partial<Data>) => {
 };
 
 export const DeleteCrew = async (id: number) => {
-	const response = await fetch(`https://rocket-project.vercel.app/crew/${id}`, {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-	});
+	const response = await fetch(
+		`https://rocket-project.vercel.app/crew/${id}`,
+		{
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}
+	);
 
 	if (!response.ok) {
 		throw new Error("Error in request"); // call notification

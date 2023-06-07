@@ -6,8 +6,8 @@ const Footer = () => {
 	return (
 		<footer>
 			<h5>
-				{t("pages.footer")}{" "}
-				<a href="https://www.joinplank.com/">fellowship plank </a>{" "}
+				{t("pages.footer")}
+				<a href="https://www.joinplank.com/">fellowship plank </a>
 			</h5>
 		</footer>
 	);
