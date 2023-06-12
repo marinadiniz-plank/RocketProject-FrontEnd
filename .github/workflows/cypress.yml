@@ -25,7 +25,7 @@ jobs:
          - name: Cypress run
            run: npm run cypress:dev
 
-   Deploy-Preview:
+   deploy:
       needs: cypress-run
       runs-on: ubuntu-latest
       steps:
